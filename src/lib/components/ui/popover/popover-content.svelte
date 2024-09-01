@@ -19,5 +19,5 @@
   {transitionConfig}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </PopoverPrimitive.Content>

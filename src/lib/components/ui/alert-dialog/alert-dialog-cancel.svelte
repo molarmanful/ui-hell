@@ -18,5 +18,5 @@
   on:keydown
   let:builder
 >
-  <slot {builder} />
+  <slot {builder}></slot>
 </AlertDialogPrimitive.Cancel>

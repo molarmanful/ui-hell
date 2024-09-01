@@ -19,5 +19,5 @@
   bind:value
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </CommandPrimitive.Root>

@@ -98,5 +98,5 @@
   on:mouseleave
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </div>

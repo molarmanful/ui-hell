@@ -21,7 +21,7 @@
     {...$$restProps}
   >
     <slot>
-      <ChevronLeft class='h-4 w-4' />
+      <ChevronLeft class='h-4 w-4'></ChevronLeft>
       <span>Previous</span>
     </slot>
   </Button>

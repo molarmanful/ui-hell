@@ -15,5 +15,5 @@
   bind:el
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </DrawerPrimitive.Overlay>

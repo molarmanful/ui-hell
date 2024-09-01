@@ -18,5 +18,5 @@
   {date}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </RangeCalendarPrimitive.Cell>

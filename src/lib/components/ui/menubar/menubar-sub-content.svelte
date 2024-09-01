@@ -24,5 +24,5 @@
   on:pointermove
   on:keydown
 >
-  <slot />
+  <slot></slot>
 </MenubarPrimitive.SubContent>

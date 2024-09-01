@@ -23,5 +23,5 @@
   role='group'
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </div>

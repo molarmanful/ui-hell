@@ -18,5 +18,5 @@
   {value}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </TabsPrimitive.Content>

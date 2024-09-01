@@ -15,6 +15,6 @@
   aria-hidden
   {...$$restProps}
 >
-  <Ellipsis class='h-4 w-4' />
+  <Ellipsis class='h-4 w-4'></Ellipsis>
   <span class='sr-only'>More pages</span>
 </span>

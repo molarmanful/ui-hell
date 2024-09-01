@@ -24,5 +24,5 @@
   {...$$restProps}
   on:keydown
 >
-  <slot />
+  <slot></slot>
 </DropdownMenuPrimitive.Content>

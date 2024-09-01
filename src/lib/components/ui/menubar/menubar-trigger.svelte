@@ -20,5 +20,5 @@
   on:pointerenter
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </MenubarPrimitive.Trigger>

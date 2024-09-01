@@ -7,5 +7,5 @@
 </script>
 
 <DropdownMenuPrimitive.RadioGroup {...$$restProps} bind:value>
-  <slot />
+  <slot></slot>
 </DropdownMenuPrimitive.RadioGroup>

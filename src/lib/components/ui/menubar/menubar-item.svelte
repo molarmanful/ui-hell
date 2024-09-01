@@ -28,5 +28,5 @@
   on:pointermove
   on:pointerdown
 >
-  <slot />
+  <slot></slot>
 </MenubarPrimitive.Item>

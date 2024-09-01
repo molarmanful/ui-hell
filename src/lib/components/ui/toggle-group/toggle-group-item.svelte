@@ -29,5 +29,5 @@
   {value}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </ToggleGroupPrimitive.Item>

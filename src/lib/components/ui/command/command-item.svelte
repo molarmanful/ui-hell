@@ -21,5 +21,5 @@
   let:action
   let:attrs
 >
-  <slot {action} {attrs} />
+  <slot {action} {attrs}></slot>
 </CommandPrimitive.Item>

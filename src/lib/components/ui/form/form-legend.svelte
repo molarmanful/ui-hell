@@ -14,5 +14,5 @@
   class={cn('data-[fs-error]:text-destructive text-sm font-medium leading-none', className)}
   let:legendAttrs
 >
-  <slot {legendAttrs} />
+  <slot {legendAttrs}></slot>
 </FormPrimitive.Legend>

@@ -10,5 +10,5 @@
 </script>
 
 <tfoot class={cn('bg-primary text-primary-foreground font-medium', className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </tfoot>

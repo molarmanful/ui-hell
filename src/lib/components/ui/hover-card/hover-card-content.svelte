@@ -24,5 +24,5 @@
   {transitionConfig}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </HoverCardPrimitive.Content>

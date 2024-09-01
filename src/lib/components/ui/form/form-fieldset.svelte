@@ -28,5 +28,5 @@
   let:tainted
   let:value
 >
-  <slot {constraints} {errors} {tainted} {value} />
+  <slot {constraints} {errors} {tainted} {value}></slot>
 </FormPrimitive.Fieldset>

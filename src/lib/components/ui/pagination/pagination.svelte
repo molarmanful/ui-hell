@@ -28,6 +28,6 @@
   {...$$restProps}
 >
   <nav {...builder} class={cn('mx-auto flex w-full flex-col items-center', className)}>
-    <slot {currentPage} {pages} {range} />
+    <slot {currentPage} {pages} {range}></slot>
   </nav>
 </PaginationPrimitive.Root>

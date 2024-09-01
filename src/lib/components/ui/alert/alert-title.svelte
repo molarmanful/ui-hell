@@ -19,5 +19,5 @@
   class={cn('mb-1 font-medium leading-none tracking-tight', className)}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </svelte:element>

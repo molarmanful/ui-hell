@@ -13,5 +13,5 @@
   class={cn('text-muted-foreground w-9 rounded-md text-[0.8rem] font-normal', className)}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </RangeCalendarPrimitive.HeadCell>

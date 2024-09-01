@@ -24,9 +24,9 @@
 </script>
 
 {#if asChild}
-  <slot {attrs} />
+  <slot {attrs}></slot>
 {:else}
   <a bind:this={el} {...attrs} {href}>
-    <slot {attrs} />
+    <slot {attrs}></slot>
   </a>
 {/if}

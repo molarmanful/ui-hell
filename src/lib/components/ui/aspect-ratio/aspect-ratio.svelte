@@ -7,5 +7,5 @@
 </script>
 
 <AspectRatioPrimitive.Root {ratio} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </AspectRatioPrimitive.Root>

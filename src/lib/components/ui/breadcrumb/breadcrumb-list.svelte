@@ -20,5 +20,5 @@
   )}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </ol>

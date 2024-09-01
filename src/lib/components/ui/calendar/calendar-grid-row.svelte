@@ -10,5 +10,5 @@
 </script>
 
 <CalendarPrimitive.GridRow class={cn('flex', className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </CalendarPrimitive.GridRow>

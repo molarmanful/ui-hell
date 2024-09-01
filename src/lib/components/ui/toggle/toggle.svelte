@@ -24,5 +24,5 @@
   {...$$restProps}
   on:click
 >
-  <slot />
+  <slot></slot>
 </TogglePrimitive.Root>

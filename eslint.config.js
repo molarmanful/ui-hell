@@ -7,6 +7,12 @@ export default antfu(
     svelte: {
       overrides: {
         'svelte/sort-attributes': 1,
+        'svelte/html-self-closing': [1, {
+          void: 'always',
+          normal: 'never',
+          component: 'always',
+          svelte: 'always',
+        }],
       },
     },
     formatters: {

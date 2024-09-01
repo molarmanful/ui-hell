@@ -19,5 +19,5 @@
   bind:paneGroup
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </ResizablePrimitive.PaneGroup>

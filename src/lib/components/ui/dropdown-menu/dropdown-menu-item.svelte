@@ -28,5 +28,5 @@
   on:pointerleave
   on:pointermove
 >
-  <slot />
+  <slot></slot>
 </DropdownMenuPrimitive.Item>

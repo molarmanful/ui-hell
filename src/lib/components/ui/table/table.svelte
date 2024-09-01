@@ -11,6 +11,6 @@
 
 <div class='relative w-full overflow-auto'>
   <table class={cn('w-full caption-bottom text-sm', className)} {...$$restProps}>
-    <slot />
+    <slot></slot>
   </table>
 </div>

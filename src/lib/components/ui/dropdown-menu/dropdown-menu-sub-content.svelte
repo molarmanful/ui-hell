@@ -27,5 +27,5 @@
   on:focusout
   on:pointermove
 >
-  <slot />
+  <slot></slot>
 </DropdownMenuPrimitive.SubContent>

@@ -21,14 +21,14 @@
 <ScrollAreaPrimitive.Root {...$$restProps} class={cn('relative overflow-hidden', className)}>
   <ScrollAreaPrimitive.Viewport class='h-full w-full rounded-[inherit]'>
     <ScrollAreaPrimitive.Content>
-      <slot />
+      <slot></slot>
     </ScrollAreaPrimitive.Content>
   </ScrollAreaPrimitive.Viewport>
   {#if orientation === 'vertical' || orientation === 'both'}
-    <Scrollbar class={scrollbarYClasses} orientation='vertical' />
+    <Scrollbar class={scrollbarYClasses} orientation='vertical'></Scrollbar>
   {/if}
   {#if orientation === 'horizontal' || orientation === 'both'}
-    <Scrollbar class={scrollbarXClasses} orientation='horizontal' />
+    <Scrollbar class={scrollbarXClasses} orientation='horizontal'></Scrollbar>
   {/if}
-  <ScrollAreaPrimitive.Corner />
+  <ScrollAreaPrimitive.Corner></ScrollAreaPrimitive.Corner>
 </ScrollAreaPrimitive.Root>

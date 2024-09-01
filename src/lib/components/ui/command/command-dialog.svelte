@@ -19,7 +19,7 @@
       {...$$restProps}
       bind:value
     >
-      <slot />
+      <slot></slot>
     </Command>
   </Dialog.Content>
 </Dialog.Root>

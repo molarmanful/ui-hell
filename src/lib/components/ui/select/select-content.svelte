@@ -35,6 +35,6 @@
   on:keydown
 >
   <div class='w-full p-1'>
-    <slot />
+    <slot></slot>
   </div>
 </SelectPrimitive.Content>

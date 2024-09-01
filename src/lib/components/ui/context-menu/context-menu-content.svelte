@@ -21,5 +21,5 @@
   {...$$restProps}
   on:keydown
 >
-  <slot />
+  <slot></slot>
 </ContextMenuPrimitive.Content>

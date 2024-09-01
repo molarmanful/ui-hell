@@ -14,5 +14,5 @@
   {...$$restProps}
   let:descriptionAttrs
 >
-  <slot {descriptionAttrs} />
+  <slot {descriptionAttrs}></slot>
 </FormPrimitive.Description>

@@ -10,5 +10,5 @@
 </script>
 
 <SheetPrimitive.Portal class={cn(className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </SheetPrimitive.Portal>

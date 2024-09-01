@@ -20,4 +20,4 @@
   {decorative}
   {orientation}
   {...$$restProps}
-/>
+></SeparatorPrimitive.Root>

@@ -11,5 +11,5 @@
 </script>
 
 <AccordionPrimitive.Item class={cn('border-b', className)} {value} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </AccordionPrimitive.Item>

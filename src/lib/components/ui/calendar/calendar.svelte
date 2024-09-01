@@ -28,9 +28,9 @@
   let:weekdays
 >
   <Calendar.Header>
-    <Calendar.PrevButton />
-    <Calendar.Heading />
-    <Calendar.NextButton />
+    <Calendar.PrevButton></Calendar.PrevButton>
+    <Calendar.Heading></Calendar.Heading>
+    <Calendar.NextButton></Calendar.NextButton>
   </Calendar.Header>
   <Calendar.Months>
     {#each months as month}
@@ -49,7 +49,7 @@
             <Calendar.GridRow class='mt-2 w-full'>
               {#each weekDates as date}
                 <Calendar.Cell {date}>
-                  <Calendar.Day {date} month={month.value} />
+                  <Calendar.Day {date} month={month.value}></Calendar.Day>
                 </Calendar.Cell>
               {/each}
             </Calendar.GridRow>

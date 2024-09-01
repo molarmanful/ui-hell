@@ -13,5 +13,5 @@
   class={cn('bg-card text-card-foreground rounded-lg border shadow-sm', className)}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </div>

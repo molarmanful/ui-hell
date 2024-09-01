@@ -21,6 +21,6 @@
   {...$$restProps}
 >
   <div class='pb-4 pt-0'>
-    <slot />
+    <slot></slot>
   </div>
 </AccordionPrimitive.Content>

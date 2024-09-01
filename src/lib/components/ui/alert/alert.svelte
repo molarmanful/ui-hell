@@ -15,5 +15,5 @@
 </script>
 
 <div class={cn(alertVariants({ variant }), className)} {...$$restProps} role='alert'>
-  <slot />
+  <slot></slot>
 </div>

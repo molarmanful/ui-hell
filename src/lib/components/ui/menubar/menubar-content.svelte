@@ -30,5 +30,5 @@
   {...$$restProps}
   on:keydown
 >
-  <slot />
+  <slot></slot>
 </MenubarPrimitive.Content>

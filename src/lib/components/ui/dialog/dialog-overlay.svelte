@@ -19,4 +19,4 @@
   {transition}
   {transitionConfig}
   {...$$restProps}
-/>
+></DialogPrimitive.Overlay>

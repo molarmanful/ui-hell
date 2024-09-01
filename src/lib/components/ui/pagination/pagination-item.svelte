@@ -10,5 +10,5 @@
 </script>
 
 <li class={cn('', className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </li>

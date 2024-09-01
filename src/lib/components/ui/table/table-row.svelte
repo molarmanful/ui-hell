@@ -20,5 +20,5 @@
   on:click
   on:keydown
 >
-  <slot />
+  <slot></slot>
 </tr>

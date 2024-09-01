@@ -22,7 +22,7 @@
   >
     <slot>
       <span>Next</span>
-      <ChevronRight class='h-4 w-4' />
+      <ChevronRight class='h-4 w-4'></ChevronRight>
     </slot>
   </Button>
 </PaginationPrimitive.NextButton>

@@ -23,6 +23,6 @@
   let:builder
 >
   <slot {builder}>
-    <ChevronLeft class='h-4 w-4' />
+    <ChevronLeft class='h-4 w-4'></ChevronLeft>
   </slot>
 </RangeCalendarPrimitive.PrevButton>

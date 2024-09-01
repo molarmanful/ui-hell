@@ -32,6 +32,6 @@
     data-embla-container=""
     {...$$restProps}
   >
-    <slot />
+    <slot></slot>
   </div>
 </div>

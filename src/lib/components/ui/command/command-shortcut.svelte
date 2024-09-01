@@ -13,5 +13,5 @@
   class={cn('text-muted-foreground ml-auto text-xs tracking-widest', className)}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </span>

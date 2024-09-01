@@ -8,5 +8,5 @@
 </script>
 
 <DrawerPrimitive.NestedRoot {shouldScaleBackground} bind:open bind:activeSnapPoint {...$$restProps}>
-  <slot />
+  <slot></slot>
 </DrawerPrimitive.NestedRoot>

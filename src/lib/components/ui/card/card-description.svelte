@@ -10,5 +10,5 @@
 </script>
 
 <p class={cn('text-muted-foreground text-sm', className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </p>

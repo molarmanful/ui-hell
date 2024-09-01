@@ -13,5 +13,5 @@
 </script>
 
 <div bind:this={el} class={cn('mt-auto flex flex-col gap-2 p-4', className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </div>

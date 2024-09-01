@@ -11,5 +11,5 @@
 </script>
 
 <CollapsiblePrimitive.Content {transition} {transitionConfig} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </CollapsiblePrimitive.Content>

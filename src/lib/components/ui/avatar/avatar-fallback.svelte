@@ -13,5 +13,5 @@
   class={cn('bg-muted flex h-full w-full items-center justify-center rounded-full', className)}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </AvatarPrimitive.Fallback>

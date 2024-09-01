@@ -11,5 +11,5 @@
 </script>
 
 <nav bind:this={el} class={className} aria-label='breadcrumb' {...$$restProps}>
-  <slot />
+  <slot></slot>
 </nav>

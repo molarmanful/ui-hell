@@ -10,5 +10,5 @@
 </script>
 
 <div class={cn('flex items-center p-6 pt-0', className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </div>

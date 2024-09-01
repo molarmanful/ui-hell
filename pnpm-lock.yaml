@@ -29,9 +29,6 @@ importers:
       lucide-svelte:
         specifier: ^0.437.0
         version: 0.437.0(svelte@5.0.0-next.242)
-      mode-watcher:
-        specifier: ^0.4.1
-        version: 0.4.1(svelte@5.0.0-next.242)
       paneforge:
         specifier: ^0.0.5
         version: 0.0.5(svelte@5.0.0-next.242)
@@ -93,12 +90,12 @@ importers:
       globals:
         specifier: ^15.0.0
         version: 15.9.0
+      mode-watcher:
+        specifier: ^0.4.1
+        version: 0.4.1(svelte@5.0.0-next.242)
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
-      prettier-plugin-svelte:
-        specifier: ^3.2.6
-        version: 3.2.6(prettier@3.3.3)(svelte@5.0.0-next.242)
       svelte:
         specifier: ^5.0.0-next.1
         version: 5.0.0-next.242
@@ -2129,12 +2126,6 @@ packages:
   prettier-linter-helpers@1.0.0:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
     engines: {node: '>=6.0.0'}
-
-  prettier-plugin-svelte@3.2.6:
-    resolution: {integrity: sha512-Y1XWLw7vXUQQZmgv1JAEiLcErqUniAF2wO7QJsw8BVMvpLET2dI5WpEIEJx1r11iHVdSMzQxivyfrH9On9t2IQ==}
-    peerDependencies:
-      prettier: ^3.0.0
-      svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
 
   prettier@3.3.3:
     resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
@@ -4677,11 +4668,6 @@ snapshots:
   prettier-linter-helpers@1.0.0:
     dependencies:
       fast-diff: 1.3.0
-
-  prettier-plugin-svelte@3.2.6(prettier@3.3.3)(svelte@5.0.0-next.242):
-    dependencies:
-      prettier: 3.3.3
-      svelte: 5.0.0-next.242
 
   prettier@3.3.3: {}
 

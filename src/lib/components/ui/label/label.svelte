@@ -18,5 +18,5 @@
   {...$$restProps}
   on:mousedown
 >
-  <slot />
+  <slot></slot>
 </LabelPrimitive.Root>

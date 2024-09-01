@@ -21,7 +21,7 @@
     {...$$restProps}
     on:click
   >
-    <slot />
-    <ChevronDown class='h-4 w-4 transition-transform duration-200' />
+    <slot></slot>
+    <ChevronDown class='h-4 w-4 transition-transform duration-200'></ChevronDown>
   </AccordionPrimitive.Trigger>
 </AccordionPrimitive.Header>

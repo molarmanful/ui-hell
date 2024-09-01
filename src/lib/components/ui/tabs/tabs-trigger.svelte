@@ -20,5 +20,5 @@
   {...$$restProps}
   on:click
 >
-  <slot />
+  <slot></slot>
 </TabsPrimitive.Trigger>

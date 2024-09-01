@@ -9,5 +9,5 @@
 </script>
 
 <CommandPrimitive.Empty class={cn('py-6 text-center text-sm', className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </CommandPrimitive.Empty>

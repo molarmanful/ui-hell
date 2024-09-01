@@ -28,5 +28,5 @@
   {...$$restProps}
   let:builder
 >
-  <slot {builder} />
+  <slot {builder}></slot>
 </ToggleGroupPrimitive.Root>

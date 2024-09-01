@@ -25,5 +25,5 @@
   {transitionConfig}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </TooltipPrimitive.Content>

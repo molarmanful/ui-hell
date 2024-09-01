@@ -10,5 +10,5 @@
 </script>
 
 <RangeCalendarPrimitive.GridHead class={cn(className)} {...$$restProps}>
-  <slot />
+  <slot></slot>
 </RangeCalendarPrimitive.GridHead>

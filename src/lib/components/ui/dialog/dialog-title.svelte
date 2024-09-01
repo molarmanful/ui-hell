@@ -13,5 +13,5 @@
   class={cn('text-lg font-semibold leading-none tracking-tight', className)}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </DialogPrimitive.Title>

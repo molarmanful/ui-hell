@@ -20,5 +20,5 @@
   role='link'
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </span>

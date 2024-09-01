@@ -15,5 +15,5 @@
   {href}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </svelte:element>

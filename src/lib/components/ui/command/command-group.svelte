@@ -16,5 +16,5 @@
   )}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </CommandPrimitive.Group>

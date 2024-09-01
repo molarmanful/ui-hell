@@ -13,5 +13,5 @@
 </script>
 
 <li bind:this={el} class={cn('inline-flex items-center gap-1.5', className)}>
-  <slot />
+  <slot></slot>
 </li>

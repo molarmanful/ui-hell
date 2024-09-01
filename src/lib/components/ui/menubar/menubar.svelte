@@ -13,5 +13,5 @@
   class={cn('bg-background flex h-10 items-center space-x-1 rounded-md border p-1', className)}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </MenubarPrimitive.Root>

@@ -15,5 +15,5 @@
   {delayMs}
   {...$$restProps}
 >
-  <slot />
+  <slot></slot>
 </AvatarPrimitive.Root>
