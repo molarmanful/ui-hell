@@ -10,6 +10,7 @@ export default antfu(
       },
     },
     css: true,
+    html: true,
   },
   ...tailwind.configs['flat/recommended'],
   {
