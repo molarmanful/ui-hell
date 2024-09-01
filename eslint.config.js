@@ -9,8 +9,10 @@ export default antfu(
         'svelte/sort-attributes': 1,
       },
     },
-    css: true,
-    html: true,
+    formatters: {
+      css: true,
+      html: true,
+    },
   },
   ...tailwind.configs['flat/recommended'],
   {
