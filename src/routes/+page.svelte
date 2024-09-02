@@ -20,7 +20,7 @@
     </h1>
   </div>
 
-  <Card.Root class='flex-1'>
+  <Card.Root>
     <Card.Header>
       <Card.Title>PATROLLING THE BIG WEB</Card.Title>
       <Card.Description>makes me wish for a nuclear winter.</Card.Description>
@@ -29,7 +29,7 @@
     <Card.Content>
       <p>
         The <strong>BIG WEB</strong> is an industrial meatgrinder. The input is
-        meat, and the output is meat adjacent.
+        meat, and the output is... meat adjacent.
       </p>
 
       <p>
