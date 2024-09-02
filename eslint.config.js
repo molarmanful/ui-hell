@@ -1,5 +1,4 @@
 import antfu from '@antfu/eslint-config'
-import tailwind from 'eslint-plugin-tailwindcss'
 
 export default antfu(
   {
@@ -15,12 +14,12 @@ export default antfu(
         }],
       },
     },
+    unocss: true,
     formatters: {
       css: true,
       html: true,
     },
   },
-  ...tailwind.configs['flat/recommended'],
   {
     rules: {
       'antfu/top-level-function': 0,
@@ -31,8 +30,6 @@ export default antfu(
         },
         'newlines-between': 'always',
       }],
-      'tailwindcss/classnames-order': 1,
-      'tailwindcss/no-custom-classname': 0,
     },
   },
 )

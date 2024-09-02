@@ -4,6 +4,7 @@
 
   import { Navbar } from '$lib/components'
 
+  import 'uno.css'
   import '../app.css'
 
   interface Props {
