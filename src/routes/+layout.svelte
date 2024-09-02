@@ -2,7 +2,7 @@
   import { ModeWatcher } from 'mode-watcher'
   import type { Snippet } from 'svelte'
 
-  import { ModeToggle } from '$lib/components'
+  import { Navbar } from '$lib/components'
 
   import '../app.css'
 
@@ -14,6 +14,5 @@
 </script>
 
 <ModeWatcher />
-<ModeToggle />
-
+<Navbar />
 {@render children()}

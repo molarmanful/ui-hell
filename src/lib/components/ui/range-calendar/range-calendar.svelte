@@ -29,9 +29,9 @@
   let:weekdays
 >
   <RangeCalendar.Header>
-    <RangeCalendar.PrevButton></RangeCalendar.PrevButton>
-    <RangeCalendar.Heading></RangeCalendar.Heading>
-    <RangeCalendar.NextButton></RangeCalendar.NextButton>
+    <RangeCalendar.PrevButton />
+    <RangeCalendar.Heading />
+    <RangeCalendar.NextButton />
   </RangeCalendar.Header>
   <RangeCalendar.Months>
     {#each months as month}
@@ -50,7 +50,7 @@
             <RangeCalendar.GridRow class='mt-2 w-full'>
               {#each weekDates as date}
                 <RangeCalendar.Cell {date}>
-                  <RangeCalendar.Day {date} month={month.value}></RangeCalendar.Day>
+                  <RangeCalendar.Day {date} month={month.value} />
                 </RangeCalendar.Cell>
               {/each}
             </RangeCalendar.GridRow>

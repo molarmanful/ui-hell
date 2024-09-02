@@ -23,7 +23,7 @@
 >
   <div class='flex items-center justify-center'>
     <RadioGroupPrimitive.ItemIndicator>
-      <Circle class='h-2.5 w-2.5 fill-current text-current'></Circle>
+      <Circle class='h-2.5 w-2.5 fill-current text-current' />
     </RadioGroupPrimitive.ItemIndicator>
   </div>
 </RadioGroupPrimitive.Item>

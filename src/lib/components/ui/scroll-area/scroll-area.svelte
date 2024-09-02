@@ -25,10 +25,10 @@
     </ScrollAreaPrimitive.Content>
   </ScrollAreaPrimitive.Viewport>
   {#if orientation === 'vertical' || orientation === 'both'}
-    <Scrollbar class={scrollbarYClasses} orientation='vertical'></Scrollbar>
+    <Scrollbar class={scrollbarYClasses} orientation='vertical' />
   {/if}
   {#if orientation === 'horizontal' || orientation === 'both'}
-    <Scrollbar class={scrollbarXClasses} orientation='horizontal'></Scrollbar>
+    <Scrollbar class={scrollbarXClasses} orientation='horizontal' />
   {/if}
-  <ScrollAreaPrimitive.Corner></ScrollAreaPrimitive.Corner>
+  <ScrollAreaPrimitive.Corner />
 </ScrollAreaPrimitive.Root>

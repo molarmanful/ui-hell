@@ -12,7 +12,7 @@
 </script>
 
 <DrawerPrimitive.Portal>
-  <DrawerOverlay></DrawerOverlay>
+  <DrawerOverlay />
   <DrawerPrimitive.Content
     class={cn(
       'bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border',

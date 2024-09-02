@@ -31,6 +31,8 @@ export default antfu(
         },
         'newlines-between': 'always',
       }],
+      'tailwindcss/classnames-order': 1,
+      'tailwindcss/no-custom-classname': 0,
     },
   },
 )

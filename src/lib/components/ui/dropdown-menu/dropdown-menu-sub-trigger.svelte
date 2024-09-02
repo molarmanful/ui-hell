@@ -29,5 +29,5 @@
   on:pointermove
 >
   <slot></slot>
-  <ChevronRight class='ml-auto h-4 w-4'></ChevronRight>
+  <ChevronRight class='ml-auto h-4 w-4' />
 </DropdownMenuPrimitive.SubTrigger>

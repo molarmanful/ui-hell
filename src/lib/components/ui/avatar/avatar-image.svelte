@@ -16,4 +16,4 @@
   {alt}
   {src}
   {...$$restProps}
-></AvatarPrimitive.Image>
+/>

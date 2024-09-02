@@ -28,9 +28,9 @@
     let:isIndeterminate
   >
     {#if isChecked}
-      <Check class='h-3.5 w-3.5'></Check>
+      <Check class='h-3.5 w-3.5' />
     {:else if isIndeterminate}
-      <Minus class='h-3.5 w-3.5'></Minus>
+      <Minus class='h-3.5 w-3.5' />
     {/if}
   </CheckboxPrimitive.Indicator>
 </CheckboxPrimitive.Root>

@@ -21,6 +21,6 @@
   {...$$restProps}
 >
   <slot>
-    <ChevronRight></ChevronRight>
+    <ChevronRight />
   </slot>
 </li>
