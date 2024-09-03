@@ -76,7 +76,12 @@
 
   <div class='flex-1 lg:(sticky top-22)'>
     <AspectRatio class='bg-muted' ratio={1}>
-      <img class='h-full w-full rounded-md object-cover image-render-pixel saturate-200' alt='Food worker handling pink slime in a factory setting.' loading='lazy' src='/meatgrinder.gif' />
+      <img
+        class='h-full w-full rounded-md object-cover image-render-pixel saturate-200'
+        alt='Food worker handling pink slime in a factory setting.'
+        loading='lazy'
+        src='/meatgrinder.gif'
+      />
     </AspectRatio>
   </div>
 </div>
