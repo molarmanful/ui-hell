@@ -40,6 +40,7 @@ export default {
     'text-large': 'text-lg font-semibold',
     'text-small': 'text-sm font-medium leading-none',
     'text-muted': 'text-muted-foreground text-sm',
+    'link': 'text-primary font-semibold transition-colors underline-offset-4 hover:underline',
   }],
   extractors: [extractorSvelte],
 }
