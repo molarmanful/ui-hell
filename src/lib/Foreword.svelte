@@ -74,8 +74,9 @@
       It's pretty insane to see how capable browsers have become at handling
       these website thingamabobs, and the evolution of web standards over time
       has allowed for a great degree of freedom in how I approach web art.
-      Freedom is great, but not everyone might appreciate what I've made. If
-      any of the following disturbs you:
+      Freedom is great, but not everyone might appreciate what I've made. This
+      website may contain mildly disturbing content including &mdash; but not
+      limited to &mdash; the following:
     </p>
 
     <ul>
@@ -86,7 +87,7 @@
     </ul>
 
     <p>
-      It may do you well to leave this site now &mdash; no hard feelings!
+      If any of the above disturb you, then it may do you well to leave this site now &mdash; no hard feelings!
       Otherwise...
     </p>
 

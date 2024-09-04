@@ -99,7 +99,7 @@
     </Card.Content>
 
     <Card.Footer class='flex-wrap justify-between'>
-      <Button><Beef class='mr-2 h-4 w-4' /> GIMME MY DAMN STEAK</Button>
+      <Button variant='destructive'><Beef class='mr-2 h-4 w-4' /> GIMME MY DAMN STEAK</Button>
     </Card.Footer>
   </Card.Root>
 </div>
