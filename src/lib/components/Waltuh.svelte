@@ -55,7 +55,7 @@
         onclick={() => {
           cols *= 2
           gap /= 2
-          brad *= 7 / 8
+          brad *= 6 / 7
         }}
         variant='destructive'
       >ON SKIBIDI</Button>
