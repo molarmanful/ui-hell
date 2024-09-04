@@ -36,25 +36,25 @@
       </p>
 
       <p>
-        I like my steak medium-rare. The <strong>BIG WEB</strong> is
-        well-done &mdash; and not the good kind. Back in college, the
-        cafeteria grill <em>said</em> they served medium steaks at minimum.
-        In reality, they served steaks that were well-done at best, and fully
-        charred at worst. Aside from snacks and fruits throughout the day, it
-        was my only real meal. I only had to pay 40AED (or the campus
-        currency equivalent); yet even then, I felt ripped off.
+        I like my steak medium-rare. The <strong>BIG WEB</strong> is well-done
+        &mdash; and not the good kind. Back in college, the cafeteria grill
+        <em>said</em> they served medium steaks at minimum. In reality, they
+        served steaks that were well-done at best, and fully charred at worst.
+        Aside from snacks and fruits throughout the day, it was my only real
+        meal. I only had to pay 40AED (or the campus currency equivalent); yet
+        even then, I felt ripped off.
       </p>
 
       <p>
         It wasn't the even the cooks' faults. The Higher-Ups&trade; decreed
         that, for safety reasons, all steaks must be cooked until the juicy
-        <span class='text-destructive'>red</span> innards were purged. Ah yes, our
-        college cafeteria was <em>sooo</em> well-known for its strict
-        adherence to safety that there were food poisoning outbreaks from
-        acai bowls served at the cafeteria. Rumor has it that the bowls were
-        made with stale ingredients &mdash; meant to be thrown out as food
-        waste &mdash; but repurposed once more for human consumption. You
-        didn't hear it from me though.
+        <span class='text-destructive'>red</span> innards were purged. Ah yes,
+        our college cafeteria was <em>sooo</em> well-known for its strict
+        adherence to safety that there were food poisoning outbreaks from acai
+        bowls served at the cafeteria. Rumor has it that the bowls were made
+        with stale ingredients &mdash; meant to be thrown out as food waste
+        &mdash; but repurposed once more for human consumption. You didn't hear
+        it from me though.
       </p>
 
       <Alert.Root class='mt-6 rounded-md'>
@@ -85,22 +85,22 @@
       </Alert.Root>
 
       <p>
-        Anyways, back to the meat grinder we go. As nutritious bags of meat
-        ourselves, it's only natural that we extrude ourselves. And what comes
+        Anyways, back to the meat grinder we go. As nutritious bags of meat,
+        it's only natural that we too shall extrude ourselves. And what comes
         out?
       </p>
 
       <Slop clazz='mt-6' />
 
       <p>
-        Stringy, squishy, slimy slop. Fleshy sinews waterfalling from every
-        orifice.
+        Stringy, squishy, slimy slop. Sinews waterfalling from every orifice,
+        flowing in fleshy waves down the conveyor belt.
       </p>
 
       <p>
-        Oh, you thought we were having steak? You're about a
-        decade too late. For us lowly freeloaders, slop is all that the
-        <strong>BIG WEB</strong> has to offer these days.
+        Oh, you thought we were having steak? Sorry buddy, you're about a
+        decade too late. For us lowly freeloaders, slop is all the sustenance
+        that the <strong>BIG WEB</strong> provides these days.
       </p>
 
       <p>

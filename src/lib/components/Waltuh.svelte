@@ -21,7 +21,7 @@
 
 <Dialog.Root bind:open>
   <Dialog.Trigger class={buttonVariants({ variant: 'destructive' })}>
-    <Beef class='mr-2 size-4' /> GIMME MY DAMN STEAK
+    <Beef class='mr-2 size-4' /> EAT YOURSELF
   </Dialog.Trigger>
 
   <Dialog.Content>
@@ -58,7 +58,7 @@
           brad *= 6 / 7
         }}
         variant='destructive'
-      >ON SKIBIDI</Button>
+      >SLOP<sup>2</sup></Button>
     </Dialog.Footer>
   </Dialog.Content>
 </Dialog.Root>
