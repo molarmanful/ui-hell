@@ -94,7 +94,7 @@
       <Slop clazz='mt-6' />
 
       <p>
-        Stringy, squishy, slimy ooze, the fleshy sinews in their least appetizing form.
+        Stringy, squishy, slimy slop. Fleshy sinews in their least appetizing form.
       </p>
     </Card.Content>
 
