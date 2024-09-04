@@ -57,7 +57,7 @@
         convenience, financial gain, or entertainment.
       </li>
       <li>
-        It's far easier to just dissociate from or outright ignore such
+        It's far easier to just dissociate from or outright ignore the
         suffering in favor of the perceived benefits.
       </li>
     </ol>
@@ -67,17 +67,17 @@
       creating chaotic generative art from structured UI components. But from
       the start, I found that this format also served as a cathartic outlet for
       my long-standing frustrations and annoyances with the <strong>BIG
-        WEB</strong>. Thus, this project evolved and took on this larger
+        WEB</strong>. Over time, the project has evolved to reflect this larger
       personal significance.
     </p>
 
     <p>
       It's pretty insane to see how capable browsers have become at handling
-      these website thingamabobs, and the evolution of web standards over time
-      has allowed for a great degree of freedom in how I approach web art.
-      Freedom is great, but not everyone might appreciate what I've made. This
-      website may contain mildly disturbing content including &mdash; but not
-      limited to &mdash; the following:
+      these website thingamabobs; the evolution of web standards over time has
+      allowed for a great degree of freedom in how I approach web art. Freedom
+      is great, but not everyone might appreciate what I've made. This website
+      may contain mildly disturbing content including &mdash; but not limited
+      to &mdash; the following:
     </p>
 
     <ul>
