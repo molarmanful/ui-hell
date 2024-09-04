@@ -93,14 +93,18 @@
       <Slop clazz='mt-6' />
 
       <p>
-        Stringy, squishy, slimy slop. Fleshy sinews rendered into their least
-        appetizing form.
+        Stringy, squishy, slimy slop. Fleshy sinews waterfalling from every
+        orifice.
       </p>
 
       <p>
         Oh, you thought we were having steak? You're about a
         decade too late. For us lowly freeloaders, slop is all that the
-        <strong>BIG WEB</strong> has to offer.
+        <strong>BIG WEB</strong> has to offer these days.
+      </p>
+
+      <p>
+        Now <strong>eat</strong>.
       </p>
     </Card.Content>
 
