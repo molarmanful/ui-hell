@@ -2,9 +2,9 @@
   import { Button } from '$lib/components/ui/button'
 </script>
 
-<div class='items-start py-13 container lg:flex lg:divide-x'>
-  <div class='pb-8 text-right lg:(sticky top-22 pr-8) lt-lg:(min-h-69svh flex items-center justify-center)'>
-    <h1 class='text-25vw leading-[.8] lg:text-15vw sm:text-28vw'>
+<div class='relative items-start py-13 container lg:(flex [&>*]:w-1/2 divide-x)'>
+  <div class='pb-8 lg:(sticky top-22 pr-8 text-right) lt-lg:(min-h-69svh flex items-center justify-center text-center)'>
+    <h1 class='text-25vw leading-[.8] 2xl:text-58.5 lg:text-37 sm:text-45 xl:text-48'>
       WHAT
       <br />
       THE

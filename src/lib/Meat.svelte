@@ -10,8 +10,8 @@
   import * as Tooltip from '$lib/components/ui/tooltip'
 </script>
 
-<div class='flex flex-col items-start gap-8 py-13 container lg:flex-row-reverse'>
-  <div class='flex-1 lg:(sticky top-22)'>
+<div class='flex flex-col items-start gap-8 py-13 container lg:flex-row-reverse lg:[&>*]:w-1/2'>
+  <div class='lg:(sticky top-22)'>
     <AspectRatio ratio={1}>
       <img
         class='h-full w-full rounded-lg bg-muted object-cover image-render-pixel saturate-200'
@@ -28,7 +28,7 @@
       <Card.Description>is not a children's book.</Card.Description>
     </Card.Header>
 
-    <Card.Content class='w-full lg:max-w-prose'>
+    <Card.Content>
       <p>
         The <strong>BIG WEB</strong> is an industrial meatgrinder.
       </p>
@@ -60,7 +60,7 @@
       </p>
 
       <Alert.Root class='mt-6 rounded-md'>
-        <Megaphone class='h-4 w-4' />
+        <Megaphone class='size-4' />
         <Alert.Title>Special shoutout</Alert.Title>
         <Alert.Description>
           to the homies
@@ -99,7 +99,7 @@
     </Card.Content>
 
     <Card.Footer class='flex-wrap justify-between'>
-      <Button variant='destructive'><Beef class='mr-2 h-4 w-4' /> GIMME MY DAMN STEAK</Button>
+      <Button variant='destructive'><Beef class='mr-2 size-4' /> GIMME MY DAMN STEAK</Button>
     </Card.Footer>
   </Card.Root>
 </div>
