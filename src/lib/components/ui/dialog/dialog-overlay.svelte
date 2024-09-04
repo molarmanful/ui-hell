@@ -4,19 +4,21 @@
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = DialogPrimitive.OverlayProps
+  interface Props extends DialogPrimitive.OverlayProps {}
 
-  let className: $$Props['class']
-  export let transition: $$Props['transition'] = fade
-  export let transitionConfig: $$Props['transitionConfig'] = {
-    duration: 150,
-  }
-  export { className as class }
+  const {
+    class: className = '',
+    transition = fade,
+    transitionConfig = {
+      duration: 150,
+    },
+    ...rest
+  }: Props = $props()
 </script>
 
 <DialogPrimitive.Overlay
   class={cn('bg-background/80 fixed inset-0 z-50 backdrop-blur-sm', className)}
   {transition}
   {transitionConfig}
-  {...$$restProps}
+  {...rest}
 />

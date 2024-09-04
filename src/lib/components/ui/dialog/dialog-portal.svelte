@@ -1,9 +1,14 @@
 <script lang='ts'>
   import { Dialog as DialogPrimitive } from 'bits-ui'
+  import type { Snippet } from 'svelte'
 
-  type $$Props = DialogPrimitive.PortalProps
+  interface Props extends DialogPrimitive.PortalProps {
+    children: Snippet
+  }
+
+  const { children, ...rest }: Props = $props()
 </script>
 
-<DialogPrimitive.Portal {...$$restProps}>
-  <slot></slot>
+<DialogPrimitive.Portal {...rest}>
+  {@render children()}
 </DialogPrimitive.Portal>

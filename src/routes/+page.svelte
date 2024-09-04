@@ -9,7 +9,7 @@
 <Foreword />
 
 <div class='min-h-75svh flex text-center container portrait:min-h-50svh'>
-  <h1 class='sticky top-22 m-auto'>
+  <h1 class='sticky top-27 m-auto'>
     CRAZY STUFF STARTS HERE
     <br />
     (MORE OR LESS)

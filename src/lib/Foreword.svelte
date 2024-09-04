@@ -81,8 +81,8 @@
     </p>
 
     <ul>
-      <li>Memes</li>
       <li>Expletives</li>
+      <li>Dumb Memes</li>
       <li>UI/UX travesties</li>
       <li>Half-incoherent ramblings</li>
       <li>Anti-establishment rhetoric</li>

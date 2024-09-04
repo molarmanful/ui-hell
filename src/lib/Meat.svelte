@@ -1,11 +1,9 @@
 <script lang='ts'>
-  import Beef from 'lucide-svelte/icons/beef'
   import Megaphone from 'lucide-svelte/icons/megaphone'
 
-  import { Slop } from '$lib/components'
+  import { Slop, Waltuh } from '$lib/components'
   import * as Alert from '$lib/components/ui/alert'
   import { AspectRatio } from '$lib/components/ui/aspect-ratio'
-  import { Button } from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card'
   import * as Tooltip from '$lib/components/ui/tooltip'
 </script>
@@ -87,19 +85,27 @@
       </Alert.Root>
 
       <p>
-        Anyways, back to the meat grinder we go. As nutritious bags of meat ourselves,
-        it's only natural that we extrude ourselves. And what comes out?
+        Anyways, back to the meat grinder we go. As nutritious bags of meat
+        ourselves, it's only natural that we extrude ourselves. And what comes
+        out?
       </p>
 
       <Slop clazz='mt-6' />
 
       <p>
-        Stringy, squishy, slimy slop. Fleshy sinews in their least appetizing form.
+        Stringy, squishy, slimy slop. Fleshy sinews rendered into their least
+        appetizing form.
+      </p>
+
+      <p>
+        Oh, you thought we were having steak? You're about a
+        decade too late. For us lowly freeloaders, slop is all that the
+        <strong>BIG WEB</strong> has to offer.
       </p>
     </Card.Content>
 
     <Card.Footer class='flex-wrap justify-between'>
-      <Button variant='destructive'><Beef class='mr-2 size-4' /> GIMME MY DAMN STEAK</Button>
+      <Waltuh />
     </Card.Footer>
   </Card.Root>
 </div>

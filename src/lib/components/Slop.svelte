@@ -13,19 +13,19 @@
   const slops = $state(Array.from<string>({ length: 420 }).map(() => slop()))
 
   $effect(() => {
-    const t = setInterval(() => {
-      if (!el)
-        return
-
-      el.scrollTop = el.scrollHeight / 2
-
-      for (let i = 10; i-- > 0;) {
-        slops.push(slop())
-        slops.shift()
-      }
-    }, 100)
-
-    return () => clearInterval(t)
+    const f = () => {
+      requestAnimationFrame(() => {
+        if (el) {
+          el.scrollTop = el.scrollHeight / 2
+          for (let i = 10; i-- > 0;) {
+            slops.push(slop())
+            slops.shift()
+          }
+        }
+        f()
+      })
+    }
+    f()
   })
 </script>
 
