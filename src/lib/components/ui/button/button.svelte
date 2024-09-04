@@ -1,27 +1,16 @@
 <script lang='ts'>
   import { Button as ButtonPrimitive } from 'bits-ui'
 
-  import { type Events, type Props, buttonVariants } from './index.js'
+  import { type Props, buttonVariants } from '.'
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = Props
-  type $$Events = Events
-
-  let className: $$Props['class']
-  export let variant: $$Props['variant'] = 'default'
-  export let size: $$Props['size'] = 'default'
-  export let builders: $$Props['builders'] = []
-  export { className as class }
+  const { class: className = '', variant = 'default', size, children, ...rest }: Props = $props()
 </script>
 
 <ButtonPrimitive.Root
   class={cn(buttonVariants({ variant, size, className }))}
-  {builders}
-  type='button'
-  {...$$restProps}
-  on:click
-  on:keydown
+  {...rest}
 >
-  <slot></slot>
+  {@render children()}
 </ButtonPrimitive.Root>

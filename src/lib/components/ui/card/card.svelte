@@ -1,17 +1,19 @@
 <script lang='ts'>
+  import type { Snippet } from 'svelte'
   import type { HTMLAttributes } from 'svelte/elements'
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = HTMLAttributes<HTMLDivElement>
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    children: Snippet
+  }
 
-  let className: $$Props['class']
-  export { className as class }
+  const { class: className = '', children, ...rest }: Props = $props()
 </script>
 
 <div
   class={cn('bg-card text-card-foreground rounded-lg border shadow-sm', className)}
-  {...$$restProps}
+  {...rest}
 >
-  <slot></slot>
+  {@render children()}
 </div>

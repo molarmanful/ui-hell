@@ -1,11 +1,14 @@
 <script lang='ts'>
   import { AspectRatio as AspectRatioPrimitive } from 'bits-ui'
+  import type { Snippet } from 'svelte'
 
-  type $$Props = AspectRatioPrimitive.Props
+  interface Props extends AspectRatioPrimitive.Props {
+    children: Snippet
+  }
 
-  export let ratio: $$Props['ratio'] = 4 / 3
+  const { ratio = 4 / 3, children, ...rest }: Props = $props()
 </script>
 
-<AspectRatioPrimitive.Root {ratio} {...$$restProps}>
-  <slot></slot>
+<AspectRatioPrimitive.Root {ratio} {...rest}>
+  {@render children()}
 </AspectRatioPrimitive.Root>

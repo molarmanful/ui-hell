@@ -1,23 +1,23 @@
 <script lang='ts'>
+  import type { Snippet } from 'svelte'
   import type { HTMLAttributes } from 'svelte/elements'
 
   import type { HeadingLevel } from './index.js'
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = HTMLAttributes<HTMLHeadingElement> & {
+  interface Props extends HTMLAttributes<HTMLHeadingElement> {
     level?: HeadingLevel
+    children: Snippet
   }
 
-  let className: $$Props['class']
-  export let level: $$Props['level'] = 'h5'
-  export { className as class }
+  const { class: className = '', level = 'h5', children, ...rest }: Props = $props()
 </script>
 
 <svelte:element
   this={level}
   class={cn('mb-1 font-medium leading-none tracking-tight', className)}
-  {...$$restProps}
+  {...rest}
 >
-  <slot></slot>
+  {@render children()}
 </svelte:element>

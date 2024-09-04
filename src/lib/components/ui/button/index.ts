@@ -1,4 +1,5 @@
 import type { Button as ButtonPrimitive } from 'bits-ui'
+import type { Snippet } from 'svelte'
 import { type VariantProps, tv } from 'tailwind-variants'
 
 import Root from './button.svelte'
@@ -36,6 +37,7 @@ type Size = VariantProps<typeof buttonVariants>['size']
 type Props = ButtonPrimitive.Props & {
   variant?: Variant
   size?: Size
+  children: Snippet
 }
 
 type Events = ButtonPrimitive.Events
