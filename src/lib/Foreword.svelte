@@ -33,9 +33,9 @@
       this time, however, was the opposite: tools and practices adopted by
       designers, developers, and engineers behind the <strong>BIG WEB</strong>.
       Microservices Architecture&trade;; Serverless Computing&trade;; Software
-      as a Service&trade;. Technologies that every respectable company, from the
-      behemothest behemoths to the most ungerminated startups, seeks to exploit
-      in their quest for the Holy Grail of Rapid Infinite Scaling.
+      as a Service&trade;. Technologies that every respectable company, from
+      the behemothest behemoths to the most ungerminated startups, seeks to
+      exploit in their quest for the Holy Grail of Rapid Infinite Scaling.
     </p>
 
     <p>
@@ -43,18 +43,18 @@
     </p>
 
     <p>
-      Tech giants have long been too giant for their own good, let alone ours.
-      And yet they still grow. When the giants sacrifice to the altar of greed
-      such petty concerns as "ethical responsibility" and "not doing shitty
-      things," we suffer. Cobalt mining, noise pollution, body dysphoria,
-      disinformation &mdash; the post-digital age is miserable. What's worse is
-      that:
+      The giants atop the <strong>BIG WEB</strong> have long been too giant for
+      their own good, let alone ours. And yet even they still grow. When
+      companies sacrifice to the altar of greed such petty concerns as "ethical
+      responsibility" and "not doing shitty things," we suffer. Cobalt mining,
+      noise pollution, body dysphoria, disinformation &mdash; the post-digital
+      age is miserable. What's worse is that:
     </p>
 
     <ol>
       <li>
-        Significant portions of us benefit in some way from the suffering of
-        others through convenience, financial gain, or entertainment.
+        Most of us benefit in some way from the suffering of others through
+        convenience, financial gain, or entertainment.
       </li>
       <li>
         It's far easier to just dissociate from or outright ignore such
@@ -63,11 +63,17 @@
     </ol>
 
     <p>
+      This website began, like most of my projects, as a little experiment in
+      creating chaotic generative art from structured UI components. But from
+      the start, I found that this format also served as a cathartic outlet for
+      my long-standing frustrations with the <strong>BIG WEB</strong>. Thus,
+      this project evolved and took on this larger personal significance.
     </p>
 
     <p>
-      It's insane what "They" let us undeserving mortals do with these website
-      thingamabobs; but I'm not really one to complain <em>too</em> much.
+      It's pretty insane to see how capable browsers have become at handling
+      these website thingamabobs, and the evolution of web standards over time
+      has allowed for a great degree of freedom in how I approach web art.
       Freedom is great, but not everyone might appreciate what I've made. If
       any of the following disturbs you:
     </p>
