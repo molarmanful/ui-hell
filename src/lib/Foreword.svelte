@@ -3,7 +3,7 @@
 </script>
 
 <div class='items-start py-13 container lg:flex lg:divide-x'>
-  <div class='pb-8 lg:(sticky top-22 pr-8 text-right) lt-lg:text-center'>
+  <div class='pb-8 text-right lg:(sticky top-22 pr-8) lt-lg:(min-h-69svh flex items-center justify-center)'>
     <h1 class='text-25vw leading-[.8] lg:text-15vw sm:text-28vw'>
       WHAT
       <br />

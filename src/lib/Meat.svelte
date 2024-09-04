@@ -1,23 +1,40 @@
 <script lang='ts'>
   import Beef from 'lucide-svelte/icons/beef'
+  import Megaphone from 'lucide-svelte/icons/megaphone'
 
+  import { Slop } from '$lib/components'
+  import * as Alert from '$lib/components/ui/alert'
   import { AspectRatio } from '$lib/components/ui/aspect-ratio'
   import { Button } from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card'
   import * as Tooltip from '$lib/components/ui/tooltip'
 </script>
 
-<div class='items-start gap-8 py-13 container lg:flex lt-lg:gap-8'>
+<div class='flex flex-col items-start gap-8 py-13 container lg:flex-row-reverse'>
+  <div class='flex-1 lg:(sticky top-22)'>
+    <AspectRatio ratio={1}>
+      <img
+        class='h-full w-full rounded-lg bg-muted object-cover image-render-pixel saturate-200'
+        alt='Food worker handling pink slime in a factory setting.'
+        loading='lazy'
+        src='/meatgrinder.gif'
+      />
+    </AspectRatio>
+  </div>
+
   <Card.Root>
     <Card.Header>
-      <Card.Title>ANIMAL FARM</Card.Title>
-      <Card.Description>... is not a children's book</Card.Description>
+      <Card.Title tag='h2'>ANIMAL FARM</Card.Title>
+      <Card.Description>is not a children's book.</Card.Description>
     </Card.Header>
 
     <Card.Content class='w-full lg:max-w-prose'>
       <p>
-        The <strong>BIG WEB</strong> is an industrial meatgrinder. The input is
-        meat, and the output is... meat adjacent.
+        The <strong>BIG WEB</strong> is an industrial meatgrinder.
+      </p>
+
+      <p>
+        The input is meat, and the output is... meat adjacent.
       </p>
 
       <p>
@@ -33,7 +50,7 @@
       <p>
         It wasn't the even the cooks' faults. The Higher-Ups&trade; decreed
         that, for safety reasons, all steaks must be cooked until the juicy
-        <span class='text-red'>red</span> innards were purged. Ah yes, our
+        <span class='text-destructive'>red</span> innards were purged. Ah yes, our
         college cafeteria was <em>sooo</em> well-known for its strict
         adherence to safety that there were food poisoning outbreaks from
         acai bowls served at the cafeteria. Rumor has it that the bowls were
@@ -42,46 +59,47 @@
         didn't hear it from me though.
       </p>
 
-      <p>
-        Shoutout to the homies
-        <Tooltip.Root>
-          <Tooltip.Trigger>
-            <s class='bg-foreground'>REDACTED</s>
-          </Tooltip.Trigger>
-          <Tooltip.Content>
-            <p>I ain't no narc</p>
-          </Tooltip.Content>
-        </Tooltip.Root>
-        and
-        <Tooltip.Root>
-          <Tooltip.Trigger>
-            <s class='bg-foreground'>REDACTED</s>
-          </Tooltip.Trigger>
-          <Tooltip.Content>
-            <p>Snitches get stitches</p>
-          </Tooltip.Content>
-        </Tooltip.Root>
-        for secretly cooking me medium-rares when the supervisors weren't
-        around.
-      </p>
+      <Alert.Root class='mt-6 rounded-md'>
+        <Megaphone class='h-4 w-4' />
+        <Alert.Title>Special shoutout</Alert.Title>
+        <Alert.Description>
+          to the homies
+          <Tooltip.Root>
+            <Tooltip.Trigger>
+              <s class='bg-current'>REDACTED</s>
+            </Tooltip.Trigger>
+            <Tooltip.Content>
+              <p>I ain't no narc</p>
+            </Tooltip.Content>
+          </Tooltip.Root>
+          and
+          <Tooltip.Root>
+            <Tooltip.Trigger>
+              <s class='bg-current'>REDACTED</s>
+            </Tooltip.Trigger>
+            <Tooltip.Content>
+              <p>Snitches get stitches</p>
+            </Tooltip.Content>
+          </Tooltip.Root>
+          for secretly cooking me medium-rares when the supervisors weren't
+          around.
+        </Alert.Description>
+      </Alert.Root>
 
       <p>
+        Anyways, back to the meat grinder we go. As nutritious bags of meat ourselves,
+        it's only natural that we extrude ourselves. And what comes out?
+      </p>
+
+      <Slop clazz='mt-6' />
+
+      <p>
+        Stringy, squishy, slimy ooze, the fleshy sinews in their least appetizing form.
       </p>
     </Card.Content>
 
-    <Card.Footer class='flex justify-between'>
-      <Button><Beef class='mr-2 h-4 w-4' /> COOK MY STEAK</Button>
+    <Card.Footer class='flex-wrap justify-between'>
+      <Button><Beef class='mr-2 h-4 w-4' /> GIMME MY DAMN STEAK</Button>
     </Card.Footer>
   </Card.Root>
-
-  <div class='flex-1 lg:(sticky top-22)'>
-    <AspectRatio class='bg-muted' ratio={1}>
-      <img
-        class='h-full w-full rounded-md object-cover image-render-pixel saturate-200'
-        alt='Food worker handling pink slime in a factory setting.'
-        loading='lazy'
-        src='/meatgrinder.gif'
-      />
-    </AspectRatio>
-  </div>
 </div>
