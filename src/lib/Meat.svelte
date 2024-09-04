@@ -11,7 +11,7 @@
 </script>
 
 <div class='flex flex-col items-start gap-8 py-13 container lg:flex-row-reverse lg:[&>*]:w-1/2'>
-  <div class='lg:(sticky top-22)'>
+  <div class='w-full lg:(sticky top-22)'>
     <AspectRatio ratio={1}>
       <img
         class='h-full w-full rounded-lg bg-muted object-cover image-render-pixel saturate-200'

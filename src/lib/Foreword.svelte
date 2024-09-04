@@ -66,8 +66,9 @@
       This website began, like most of my projects, as a little experiment in
       creating chaotic generative art from structured UI components. But from
       the start, I found that this format also served as a cathartic outlet for
-      my long-standing frustrations with the <strong>BIG WEB</strong>. Thus,
-      this project evolved and took on this larger personal significance.
+      my long-standing frustrations and annoyances with the <strong>BIG
+        WEB</strong>. Thus, this project evolved and took on this larger
+      personal significance.
     </p>
 
     <p>
