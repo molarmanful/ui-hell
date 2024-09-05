@@ -42,7 +42,7 @@
         <ARSkel>
           <img
             style:border-radius='{brad}rem'
-            class="{loaded ? 'opacity-100' : 'opacity-0'} size-full bg-muted object-cover image-render-pixel saturate-200 transition-opacity"
+            class="{loaded ? 'opacity-100' : 'opacity-0'} size-full bg-muted object-cover image-render-pixel saturate-200 transition-opacity-200"
             alt='Walter White falling over in dismay.'
             loading='lazy'
             onload={() => loaded = true}

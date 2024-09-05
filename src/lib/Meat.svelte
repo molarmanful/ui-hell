@@ -13,7 +13,7 @@
   <div class='w-full lg:(sticky top-22)'>
     <ARSkel>
       <img
-        class="{loaded ? 'opacity-100' : 'opacity-0'} h-full w-full rounded-lg bg-muted object-cover image-render-pixel saturate-200 transition-opacity"
+        class="{loaded ? 'opacity-100' : 'opacity-0'} h-full w-full rounded-lg bg-muted object-cover image-render-pixel saturate-200 transition-opacity-200"
         alt='Food worker handling pink slime in a factory setting.'
         loading='lazy'
         onload={() => loaded = true}
