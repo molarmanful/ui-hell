@@ -9,6 +9,7 @@
   let gap = $state(2)
   let open = $state(false)
   let brad = $state(0.375)
+  let sat = $state(1)
   let loaded = $state(false)
 
   $effect(() => {
@@ -16,6 +17,7 @@
       cols = 1
       gap = 2
       brad = 0.375
+      sat = 1
     }
   })
 </script>
@@ -42,7 +44,8 @@
         <ARSkel>
           <img
             style:border-radius='{brad}rem'
-            class="{loaded ? 'opacity-100' : 'opacity-0'} size-full bg-muted object-cover image-render-pixel saturate-200 transition-opacity-500"
+            style:filter='saturate({sat})'
+            class="{loaded ? 'opacity-100' : 'opacity-0'} size-full bg-muted object-cover image-render-pixel transition-opacity-500"
             alt='Walter White falling over in dismay.'
             loading='lazy'
             onload={() => loaded = true}
@@ -58,6 +61,7 @@
           cols *= 2
           gap /= 2
           brad *= 6 / 7
+          sat *= 2
         }}
         variant='destructive'
       >SLOP<sup>2</sup></Button>
