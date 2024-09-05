@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { Foreword, Meat, SliderSpam } from '$lib'
+  import { Foreword } from '$lib'
 </script>
 
 <svelte:head>
@@ -8,12 +8,10 @@
 
 <Foreword />
 
-<div class='min-h-75svh flex text-center container portrait:min-h-50svh'>
+<div class='min-h-75svh flex flex-col text-center container portrait:min-h-50svh'>
   <h1 class='sticky top-27 m-auto'>
     CRAZY STUFF STARTS HERE
     <br />
     (MORE OR LESS)
   </h1>
 </div>
-
-<SliderSpam />

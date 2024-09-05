@@ -43,6 +43,7 @@
     "lint-staged": "^15.2.10",
     "mode-watcher": "^0.4.1",
     "prettier": "^3.3.3",
+    "runed": "^0.15.2",
     "simple-git-hooks": "^2.11.1",
     "svelte": "^5.0.0-next.1",
     "svelte-check": "^3.6.0",

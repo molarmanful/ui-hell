@@ -1,10 +1,9 @@
 <script lang='ts'>
   import Beef from 'lucide-svelte/icons/beef'
 
-  import { AspectRatio } from '$lib/components/ui/aspect-ratio'
+  import { ARSkel } from '$lib/components'
   import { Button, buttonVariants } from '$lib/components/ui/button'
   import * as Dialog from '$lib/components/ui/dialog'
-  import { Skeleton } from '$lib/components/ui/skeleton'
 
   let cols = $state(1)
   let gap = $state(2)
@@ -40,17 +39,16 @@
       class='grid'
     >
       {#each Array.from({ length: cols * cols }) as _}
-        <AspectRatio ratio={1}>
-          <Skeleton class='absolute inset-0 size-full' />
+        <ARSkel>
           <img
             style:border-radius='{brad}rem'
-            class="{loaded ? 'opacity-100' : 'opacity-0'} size-full rounded-md bg-muted object-cover image-render-pixel saturate-200 transition-opacity"
+            class="{loaded ? 'opacity-100' : 'opacity-0'} size-full bg-muted object-cover image-render-pixel saturate-200 transition-opacity"
             alt='Walter White falling over in dismay.'
             loading='lazy'
             onload={() => loaded = true}
             src='/walter-white-falling.gif'
           />
-        </AspectRatio>
+        </ARSkel>
       {/each}
     </div>
 

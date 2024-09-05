@@ -1,28 +1,30 @@
 <script lang='ts'>
   import Megaphone from 'lucide-svelte/icons/megaphone'
 
-  import { Slop, Waltuh } from '$lib/components'
+  import { ARSkel, Slop, Waltuh } from '$lib/components'
   import * as Alert from '$lib/components/ui/alert'
-  import { AspectRatio } from '$lib/components/ui/aspect-ratio'
   import * as Card from '$lib/components/ui/card'
   import * as Tooltip from '$lib/components/ui/tooltip'
+
+  let loaded = $state(false)
 </script>
 
 <div class='flex flex-col items-start gap-8 py-13 container lg:flex-row-reverse lg:[&>*]:w-1/2'>
   <div class='w-full lg:(sticky top-22)'>
-    <AspectRatio ratio={1}>
+    <ARSkel>
       <img
-        class='h-full w-full rounded-lg bg-muted object-cover image-render-pixel saturate-200'
+        class="{loaded ? 'opacity-100' : 'opacity-0'} h-full w-full rounded-lg bg-muted object-cover image-render-pixel saturate-200 transition-opacity"
         alt='Food worker handling pink slime in a factory setting.'
         loading='lazy'
+        onload={() => loaded = true}
         src='/meatgrinder.gif'
       />
-    </AspectRatio>
+    </ARSkel>
   </div>
 
   <Card.Root>
     <Card.Header>
-      <Card.Title tag='h2'>ANIMAL FARM</Card.Title>
+      <Card.Title tag='h1'>ANIMAL FARM</Card.Title>
       <Card.Description>is not a children's book.</Card.Description>
     </Card.Header>
 
