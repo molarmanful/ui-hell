@@ -37,7 +37,7 @@
   })
 </script>
 
-<div class='cols-3 flex flex-wrap gap-5 py-13 container lg:cols-12 md:cols-6'>
+<div class='grid cols-3 gap-5 py-13 container lg:cols-12 md:cols-6'>
   {#each states as state}
     {#if state instanceof ProgressGen}
       <Progress max={state.max} value={state.x} />
