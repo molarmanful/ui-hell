@@ -1,5 +1,6 @@
 <script lang='ts'>
   import { Foreword } from '$lib'
+  import { Button } from '$lib/components/ui/button'
 </script>
 
 <svelte:head>
@@ -8,10 +9,13 @@
 
 <Foreword />
 
-<div class='min-h-75svh flex flex-col text-center container portrait:min-h-50svh'>
-  <h1 class='sticky top-27 m-auto'>
-    CRAZY STUFF STARTS HERE
-    <br />
-    (MORE OR LESS)
-  </h1>
+<div class='align-center flex text-center h-svh container'>
+  <div class='sticky top-27 m-auto'>
+    <h1>
+      CRAZY STUFF STARTS HERE
+      <br />
+      (MORE OR LESS)
+    </h1>
+    <Button class='mt-8 origin-t scale-200' href='/meat'>START</Button>
+  </div>
 </div>
