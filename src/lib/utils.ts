@@ -61,3 +61,9 @@ export const flyAndScale = (
     easing: cubicOut,
   }
 }
+
+export const rand = (a: number, b?: number) => (b ? Math.random() * (b - a) + a : Math.random() * a) | 0
+
+export const getRand = <T>(
+  xs: { length: number, [i: number]: T },
+) => xs[rand(xs.length)]

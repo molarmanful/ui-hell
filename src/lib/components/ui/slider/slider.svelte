@@ -3,25 +3,23 @@
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = SliderPrimitive.Props
+  interface Props extends SliderPrimitive.Props {}
 
-  let className: $$Props['class']
-  export let value: $$Props['value'] = [0]
-  export { className as class }
+  let { value = [0], class: className = '', ...rest }: Props = $props()
 </script>
 
 <SliderPrimitive.Root
   class={cn('relative flex w-full touch-none select-none items-center', className)}
   bind:value
-  {...$$restProps}
   let:thumbs
+  {...rest}
 >
-  <span class='bg-secondary relative h-2 w-full grow overflow-hidden rounded-full'>
-    <SliderPrimitive.Range class='bg-primary absolute h-full' />
+  <span class='relative h-2 w-full grow overflow-hidden rounded-full bg-secondary'>
+    <SliderPrimitive.Range class='absolute h-full bg-primary' />
   </span>
   {#each thumbs as thumb}
     <SliderPrimitive.Thumb
-      class='border-primary bg-background ring-offset-background focus-visible:ring-ring block h-5 w-5 rounded-full border-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
+      class='block h-5 w-5 border-2 border-primary rounded-full bg-background ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring'
       {thumb}
     />
   {/each}

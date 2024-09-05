@@ -64,11 +64,11 @@
 
     <p>
       This website began, like most of my projects, as a little experiment in
-      creating chaotic generative art from structured UI components. But from
-      the start, I found that this format also served as a cathartic outlet for
-      my long-standing frustrations and annoyances with the <strong>BIG
-        WEB</strong>. Over time, the project has evolved to reflect this larger
-      personal significance.
+      creating chaotic generative art from structured UI components; a "bullet
+      hell" for UI, if you will. But from the start, I found that this format
+      also served as a nice cathartic outlet for my long-standing frustrations
+      and annoyances with the <strong>BIG WEB</strong>. And over time, the
+      project has evolved to reflect this larger personal significance.
     </p>
 
     <p>

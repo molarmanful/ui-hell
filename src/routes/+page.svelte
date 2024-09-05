@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { Foreword, Meat } from '$lib'
+  import { Foreword, Meat, SliderSpam } from '$lib'
 </script>
 
 <svelte:head>
@@ -16,4 +16,4 @@
   </h1>
 </div>
 
-<Meat />
+<SliderSpam />

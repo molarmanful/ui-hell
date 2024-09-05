@@ -3,10 +3,9 @@
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = HTMLAttributes<HTMLDivElement>
+  interface Props extends HTMLAttributes<HTMLDivElement> {}
 
-  let className: $$Props['class']
-  export { className as class }
+  const { class: className, ...rest }: Props = $props()
 </script>
 
-<div class={cn('bg-muted animate-pulse rounded-md', className)} {...$$restProps}></div>
+<div class={cn('bg-muted animate-pulse rounded-md', className)} {...rest}></div>
