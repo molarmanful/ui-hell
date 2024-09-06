@@ -3,7 +3,21 @@
   import { Progress } from '$lib/components/ui/progress'
   import * as RadioGroup from '$lib/components/ui/radio-group'
   import { Slider } from '$lib/components/ui/slider'
+  import { Switch } from '$lib/components/ui/switch'
   import { getRand, rand } from '$lib/utils'
+
+  class Retick {
+    int = 0
+    cyc = 3
+    off = rand(this.cyc)
+
+    retick(f = () => {}) {
+      if (this.int === this.off)
+        f()
+      this.int++
+      this.int %= this.cyc
+    }
+  }
 
   class BarGen {
     max = 100
@@ -31,33 +45,39 @@
 
   class RadioGen {
     n = rand(2, 6)
-    int = 0
-    cyc = 3
-    off = rand(this.cyc)
+    retick = new Retick()
     x = $state(0)
     el = $state<HTMLDivElement>()
 
     tick() {
-      if (this.int === this.off)
+      this.retick.retick(() => {
         this.x = rand(this.n)
-      this.int++
-      this.int %= this.cyc
+      })
     }
   }
 
   class CheckGen {
     n = rand(1, 5)
-    int = 0
-    cyc = 3
-    off = rand(this.cyc)
+    retick = new Retick()
     x = $state(Array.from<boolean>({ length: this.n }).fill(false))
     el = $state<HTMLDivElement>()
 
     tick() {
-      if (this.int === this.off)
+      this.retick.retick(() => {
         this.x[rand(this.x.length)] = !!rand(2)
-      this.int++
-      this.int %= this.cyc
+      })
+    }
+  }
+
+  class SwitchGen {
+    retick = new Retick()
+    x = $state(false)
+    el = $state<HTMLButtonElement>()
+
+    tick() {
+      this.retick.retick(() => {
+        this.x = !!rand(2)
+      })
     }
   }
 
@@ -66,6 +86,7 @@
     () => new ProgressGen(),
     () => new RadioGen(),
     () => new CheckGen(),
+    () => new SwitchGen(),
   ] as const
 
   const states = $state(
@@ -174,7 +195,7 @@
               bind:el={state.el}
             >
               {#each Array.from({ length: state.n }) as _, i}
-                <RadioGroup.Item value={`${i}`} />
+                <RadioGroup.Item class='my-auto' value={`${i}`} />
               {/each}
             </RadioGroup.Root>
 
@@ -186,9 +207,18 @@
               data-j={j}
             >
               {#each state.x as t}
-                <Checkbox checked={t} />
+                <Checkbox class='my-auto' checked={t} />
               {/each}
             </div>
+
+          {:else if state instanceof SwitchGen}
+            <Switch
+              class='flex flex-wrap gap-2 transition-opacity-200'
+              checked={state.x}
+              data-i={i}
+              data-j={j}
+              bind:el={state.el}
+            />
           {/if}
         {/each}
       </div>

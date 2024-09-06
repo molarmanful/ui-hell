@@ -3,12 +3,9 @@
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = SwitchPrimitive.Props
-  type $$Events = SwitchPrimitive.Events
+  interface Props extends SwitchPrimitive.Props {}
 
-  let className: $$Props['class']
-  export let checked: $$Props['checked']
-  export { className as class }
+  let { class: className, checked, el = $bindable(), ...rest }: Props = $props()
 </script>
 
 <SwitchPrimitive.Root
@@ -17,9 +14,8 @@
     className,
   )}
   bind:checked
-  {...$$restProps}
-  on:click
-  on:keydown
+  bind:el
+  {...rest}
 >
   <SwitchPrimitive.Thumb
     class={cn(
