@@ -5,12 +5,13 @@
 
   interface Props extends SliderPrimitive.Props {}
 
-  let { value = [0], class: className = '', ...rest }: Props = $props()
+  let { value = [0], class: className = '', el = $bindable(), ...rest }: Props = $props()
 </script>
 
 <SliderPrimitive.Root
   class={cn('relative flex w-full touch-none select-none items-center', className)}
   bind:value
+  bind:el
   let:thumbs
   {...rest}
 >
