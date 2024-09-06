@@ -1,15 +1,16 @@
 <script lang='ts'>
   import { RadioGroup as RadioGroupPrimitive } from 'bits-ui'
+  import type { Snippet } from 'svelte'
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = RadioGroupPrimitive.Props
+  interface Props extends RadioGroupPrimitive.Props {
+    children: Snippet
+  }
 
-  let className: $$Props['class']
-  export let value: $$Props['value']
-  export { className as class }
+  let { class: className = '', value, children, el = $bindable(), ...rest }: Props = $props()
 </script>
 
-<RadioGroupPrimitive.Root class={cn('grid gap-2', className)} bind:value {...$$restProps}>
-  <slot></slot>
+<RadioGroupPrimitive.Root class={cn('grid gap-2', className)} bind:value bind:el {...rest}>
+  {@render children()}
 </RadioGroupPrimitive.Root>

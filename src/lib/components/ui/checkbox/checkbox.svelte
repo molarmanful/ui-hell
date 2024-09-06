@@ -5,12 +5,9 @@
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = CheckboxPrimitive.Props
-  type $$Events = CheckboxPrimitive.Events
+  interface Props extends CheckboxPrimitive.Props {}
 
-  let className: $$Props['class']
-  export let checked: $$Props['checked'] = false
-  export { className as class }
+  let { class: className, checked = false, ...rest }: Props = $props()
 </script>
 
 <CheckboxPrimitive.Root
@@ -19,8 +16,7 @@
     className,
   )}
   bind:checked
-  {...$$restProps}
-  on:click
+  {...rest}
 >
   <CheckboxPrimitive.Indicator
     class={cn('flex h-4 w-4 items-center justify-center text-current')}

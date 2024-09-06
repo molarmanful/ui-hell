@@ -4,12 +4,9 @@
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = RadioGroupPrimitive.ItemProps
-  type $$Events = RadioGroupPrimitive.ItemEvents
+  interface Props extends RadioGroupPrimitive.ItemProps {}
 
-  let className: $$Props['class']
-  export let value: $$Props['value']
-  export { className as class }
+  const { class: className = '', value, ...rest }: Props = $props()
 </script>
 
 <RadioGroupPrimitive.Item
@@ -18,8 +15,7 @@
     className,
   )}
   {value}
-  {...$$restProps}
-  on:click
+  {...rest}
 >
   <div class='flex items-center justify-center'>
     <RadioGroupPrimitive.ItemIndicator>
