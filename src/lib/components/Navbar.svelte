@@ -7,10 +7,10 @@
     clazz?: string
   }
 
-  const { clazz = '', ...props }: Props = $props()
+  const { clazz = '', ...rest }: Props = $props()
 </script>
 
-<header class='{clazz} sticky top-0 z-50 w-full backdrop-blur-69 items-start b-b bg-background/80' {...props}>
+<header class='{clazz} sticky top-0 z-50 w-full backdrop-blur-69 items-start b-b bg-background/80' {...rest}>
   <div class='flex items-center justify-between py-2 container'>
     <div class='flex items-center'>
       <a class='font-bold' href='/'>ui-hell</a>
