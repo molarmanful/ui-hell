@@ -1,11 +1,10 @@
 <script lang='ts'>
   import { Foreword } from '$lib'
+  import { Title } from '$lib/components'
   import { Button } from '$lib/components/ui/button'
 </script>
 
-<svelte:head>
-  <title>ui-hell</title>
-</svelte:head>
+<Title />
 
 <Foreword />
 

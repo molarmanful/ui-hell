@@ -6,6 +6,7 @@
 
   import { afterNavigate, onNavigate } from '$app/navigation'
   import { Navbar } from '$lib/components'
+  import { all } from '$lib/contexts'
 
   import 'uno.css'
   import '../app.css'
@@ -18,6 +19,9 @@
   const { children }: Props = $props()
 
   let loaded = $state(false)
+
+  all.set({
+  })
 
   afterNavigate(() => {
     loaded = true

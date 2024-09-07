@@ -1,6 +1,7 @@
 <script lang='ts'>
   import Beef from 'lucide-svelte/icons/beef'
 
+  import { goto } from '$app/navigation'
   import { ARSkel } from '$lib/components'
   import { Button, buttonVariants } from '$lib/components/ui/button'
   import * as Dialog from '$lib/components/ui/dialog'
@@ -62,6 +63,12 @@
           gap /= 2
           brad *= 6 / 7
           sat *= 2
+
+          const now = Date.now()
+          requestAnimationFrame(() => {
+            if (open && Date.now() - now >= 1000)
+              goto('/sliders')
+          })
         }}
         variant='destructive'
       >SLOP<sup>2</sup></Button>
