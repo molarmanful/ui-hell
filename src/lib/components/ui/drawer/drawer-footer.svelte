@@ -1,17 +1,17 @@
 <script lang='ts'>
+  import type { Snippet } from 'svelte'
   import type { HTMLAttributes } from 'svelte/elements'
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = HTMLAttributes<HTMLDivElement> & {
+  interface Props extends HTMLAttributes<HTMLDivElement> {
     el?: HTMLDivElement
+    children: Snippet
   }
 
-  export let el: $$Props['el']
-  let className: $$Props['class']
-  export { className as class }
+  let { class: className = '', el = $bindable(), children, ...rest }: Props = $props()
 </script>
 
-<div bind:this={el} class={cn('mt-auto flex flex-col gap-2 p-4', className)} {...$$restProps}>
-  <slot></slot>
+<div bind:this={el} class={cn('mt-auto flex flex-col gap-2 p-4', className)} {...rest}>
+  {@render children()}
 </div>

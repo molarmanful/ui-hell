@@ -12,6 +12,7 @@
   let brad = $state(0.375)
   let sat = $state(1)
   let loaded = $state(false)
+  let going = $state(false)
 
   $effect(() => {
     if (!open) {
@@ -58,6 +59,7 @@
 
     <Dialog.Footer>
       <Button
+        disabled={going}
         onclick={() => {
           cols *= 2
           gap /= 2
@@ -66,12 +68,20 @@
 
           const now = Date.now()
           requestAnimationFrame(() => {
-            if (open && Date.now() - now >= 1000)
+            if (open && Date.now() - now >= 1000) {
+              going = true
               goto('/sliders')
+            }
           })
         }}
         variant='destructive'
-      >SLOP<sup>2</sup></Button>
+      >
+        {#if going}
+          LOADING...
+        {:else}
+          SLOP<sup>2</sup>
+        {/if}
+      </Button>
     </Dialog.Footer>
   </Dialog.Content>
 </Dialog.Root>

@@ -1,19 +1,20 @@
 <script lang='ts'>
+  import type { Snippet } from 'svelte'
   import { Drawer as DrawerPrimitive } from 'vaul-svelte'
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = DrawerPrimitive.TitleProps
+  interface Props extends DrawerPrimitive.TitleProps {
+    children: Snippet
+  }
 
-  export let el: $$Props['el']
-  let className: $$Props['class']
-  export { className as class }
+  let { class: className = '', el = $bindable(), children, ...rest }: Props = $props()
 </script>
 
 <DrawerPrimitive.Title
   class={cn('text-lg font-semibold leading-none tracking-tight', className)}
   bind:el
-  {...$$restProps}
+  {...rest}
 >
-  <slot></slot>
+  {@render children()}
 </DrawerPrimitive.Title>

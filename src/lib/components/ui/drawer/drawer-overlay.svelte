@@ -1,19 +1,20 @@
 <script lang='ts'>
+  import type { Snippet } from 'svelte'
   import { Drawer as DrawerPrimitive } from 'vaul-svelte'
 
   import { cn } from '$lib/utils.js'
 
-  type $$Props = DrawerPrimitive.OverlayProps
+  interface Props extends DrawerPrimitive.OverlayProps {
+    children: Snippet
+  }
 
-  export let el: $$Props['el']
-  let className: $$Props['class']
-  export { className as class }
+  let { class: className = '', el = $bindable(), children, ...rest }: Props = $props()
 </script>
 
 <DrawerPrimitive.Overlay
   class={cn('fixed inset-0 z-50 bg-black/80', className)}
   bind:el
-  {...$$restProps}
+  {...rest}
 >
-  <slot></slot>
+  {@render children()}
 </DrawerPrimitive.Overlay>
