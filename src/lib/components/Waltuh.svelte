@@ -24,7 +24,7 @@
   })
 </script>
 
-<Dialog.Root bind:open>
+<Dialog.Root closeOnEscape={!going} closeOnOutsideClick={!going} bind:open>
   <Dialog.Trigger class={buttonVariants({ variant: 'destructive' })}>
     <Beef class='mr-2 size-4' /> EAT THE SLOP
   </Dialog.Trigger>
@@ -70,6 +70,7 @@
           requestAnimationFrame(() => {
             if (open && Date.now() - now >= 1000) {
               going = true
+              cols = 1
               goto('/sliders')
             }
           })
