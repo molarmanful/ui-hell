@@ -51,9 +51,19 @@
 <div class='text-background mix-blend-difference container [&>*]:mx-auto [&>*]:max-w-prose [&>*]:flex [&>*]:items-center dark:text-foreground [&>*]:min-h-svh'>
   <div>
     <div class='sticky top-1/2 translate-y--1/2'>
+      <h2 class='b-none text-4xl md:text-7xl'>
+        Power is
+        <br />
+        one helluva drug.
+      </h2>
+    </div>
+  </div>
+
+  <div>
+    <div class='sticky top-1/2 translate-y--1/2'>
       <p class='md:text-3xl'>
-        Our smartphones alone can process at speeds over 100,000 times that of
-        the Apollo 11's onboard computer...
+        Our smartphones alone can process at speeds of over <strong>100,000
+          times</strong> that of the Apollo 11's onboard computer...
       </p>
     </div>
   </div>

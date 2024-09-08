@@ -77,6 +77,35 @@
     </p>
 
     <p>
+      It should be noted that I don't have solutions in mind to address the
+      issues I bring up here. But why should I? After all:
+    </p>
+
+    <ol>
+      <li>
+        These issues have long passed the point of solvability for one person
+        alone (barring extenuating factors and drastic measures).
+      </li>
+      <li>
+        The Internet userbase &mdash; and arguably, society as a whole &mdash;
+        is too fractured and lacking in empathy to even begin effecting
+        meaningful change.
+      </li>
+      <li>
+        There seems to be this implicit stigma around complaining as
+        "unproductive." But in the face of such undesirable yet inescapable
+        shifts, I would argue that complaining is actually <em>more</em>
+        productive than the supposed "alternatives."
+      </li>
+    </ol>
+
+    <p>
+      I still take full responsibility for all views expressed on this website.
+      Just don't expect me to be the Second Coming of Jesus Christ or the
+      15<sup>th</sup> Dalai Lama.
+    </p>
+
+    <p>
       It's pretty insane to see how capable browsers have become at handling
       these website thingamabobs; the evolution of web standards over time has
       allowed for a great degree of freedom in how I approach web art. Freedom
