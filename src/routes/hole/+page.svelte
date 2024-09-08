@@ -6,11 +6,17 @@
   $effect(() => {
     scroll(timeline([
       ['.hole', {
-        rotate: [5, 360 + 180],
+        rotate: [5, 360 + 340],
       }, { duration: 1 }],
+
+      { name: 'a', at: 0.5 },
+      ['.hole', {
+        x: [0, '5%'],
+        y: [0, '5%'],
+      }, { at: 'a' }],
       ['.big-hole', {
         scale: [1, 4],
-      }, { at: 0.5 }],
+      }, { at: 'a' }],
     ],
     ))
   })
@@ -44,8 +50,8 @@
 
 <div class='text-background mix-blend-difference container [&>*]:mx-auto [&>*]:max-w-prose [&>*]:flex [&>*]:items-center dark:text-foreground [&>*]:min-h-svh'>
   <div>
-    <div>
-      <p class='text-3xl'>
+    <div class='sticky top-1/2 translate-y--1/2'>
+      <p class='md:text-3xl'>
         Our smartphones alone can process at speeds over 100,000 times that of
         the Apollo 11's onboard computer...
       </p>
@@ -53,10 +59,11 @@
   </div>
 
   <div>
-    <div class='bg-background text-foreground dark:bg-foreground dark:text-background'>
-      <p class='p-8 text-4xl font-bold'>
-        Yet it seems that almost every piece of software nowadays is hellbent on
-        stretching the computational recta of our personal devices to their
+    <div>
+      <p class='text-xl font-bold md:text-4xl'>
+        And yet nowadays, it seems that almost every piece of software is
+        hellbent on stretching the computational <span
+          class='text-warning'>recta</span> of our personal devices to their
         absolute limits.
       </p>
     </div>
