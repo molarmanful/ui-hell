@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { scroll, timeline } from 'motion'
+  import { animate, inView, scroll, timeline } from 'motion'
 
   import { Title } from '$lib/components'
 
@@ -19,6 +19,17 @@
       }, { at: 'a' }],
     ],
     ))
+
+    return inView('.zen', () => {
+      animate('.big-hole', {
+        opacity: 0.1,
+      })
+
+      return () =>
+        animate('.big-hole', {
+          opacity: 1,
+        })
+    }, { margin: '-50% 0% -50% 0%' })
   })
 </script>
 
@@ -48,7 +59,7 @@
   </h1>
 </div>
 
-<div class='text-background mix-blend-difference container [&>*]:mx-auto [&>*]:max-w-prose [&>*]:flex [&>*]:items-center dark:text-foreground [&>*]:min-h-svh'>
+<div class='text-background mix-blend-difference container [&>*]:(mx-auto max-w-prose flex items-center min-h-svh) dark:text-foreground'>
   <div>
     <div class='sticky top-1/2 translate-y--1/2'>
       <h2 class='b-none text-4xl md:text-7xl'>
@@ -56,6 +67,12 @@
         <br />
         one helluva drug.
       </h2>
+    </div>
+  </div>
+
+  <div class='zen b-1'>
+    <div>
+      <p></p>
     </div>
   </div>
 
