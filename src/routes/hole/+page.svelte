@@ -1,35 +1,43 @@
 <script lang='ts'>
-  import { animate, inView, scroll, timeline } from 'motion'
+  import { scroll, timeline } from 'motion'
+  import { watch } from 'runed'
 
   import { Title } from '$lib/components'
 
-  $effect(() => {
-    scroll(timeline([
-      ['.hole', {
-        rotate: [5, 360 + 340],
-      }, { duration: 1 }],
+  const expando = $state<{
+    x?: number
+    el?: HTMLElement
+  }>({})
 
-      { name: 'a', at: 0.5 },
+  watch(() => expando?.x, () => {
+    if (expando?.x === void 0)
+      return
+
+    console.log((scrollY + (expando?.el?.getBoundingClientRect().y ?? 0)) / document.body.clientHeight)
+
+    return scroll(timeline([
       ['.hole', {
+        rotate: [5, 360],
+      }, {
+        duration: (scrollY + (expando?.el?.getBoundingClientRect().y ?? 0)) / document.body.clientHeight,
+        easing: 'ease-in',
+      }],
+
+      'a',
+      ['.hole', {
+        rotate: [0, 340],
         x: [0, '5%'],
         y: [0, '5%'],
-      }, { at: 'a' }],
+      }, {
+        at: 'a',
+        easing: 'linear',
+      }],
       ['.big-hole', {
         scale: [1, 4],
-      }, { at: 'a' }],
-    ],
-    ))
-
-    return inView('.zen', () => {
-      animate('.big-hole', {
-        opacity: 0.1,
-      })
-
-      return () =>
-        animate('.big-hole', {
-          opacity: 1,
-        })
-    }, { margin: '-50% 0% -50% 0%' })
+      }, {
+        at: 'a',
+      }],
+    ]))
   })
 </script>
 
@@ -59,7 +67,7 @@
   </h1>
 </div>
 
-<div class='text-background mix-blend-difference container [&>*]:(mx-auto max-w-prose flex items-center min-h-svh) dark:text-foreground'>
+<div class='text-background container [&>*]:(mx-auto max-w-prose flex items-center mix-blend-difference min-h-svh) dark:text-foreground'>
   <div>
     <div class='sticky top-1/2 translate-y--1/2'>
       <h2 class='b-none text-4xl md:text-7xl'>
@@ -70,9 +78,32 @@
     </div>
   </div>
 
-  <div class='zen b-1'>
-    <div>
-      <p></p>
+  <div class='isolate text-foreground mix-blend-normal!'>
+    <div class='b rounded-lg bg-background/90 p-6 backdrop-blur'>
+      <p>
+        It's easy to take many things for granted as a member of <strong>The
+          Civilized World&trade;</strong>. Food, water, shelter, clothing,
+        sleep &mdash; for the average citizen of the Developed Nations of
+        Earth, survival is often a choice rather than a necessity. At times, it
+        may even seem that electricity is free.
+      </p>
+
+      <p>
+        The words <em>electricity</em> and <em>power</em> tend to be used
+        interchangeably in everyday conversation, and understandably so.
+        Electricity can move anything &mdash; people, goods, money &mdash;
+        anywhere. Electricity can feed a nation, and give its people clean
+        running water. Electricity can save the dying, and cure the ailing.
+        Electricity is what lets children read without straining in the dark
+        of night.
+      </p>
+
+      <p>
+        In the Olympic dick-measuring contest of international relations,
+        having a strong, stable electrical infrastructure grants a nation
+        around 6 bonus inches. Electrical power <em>is</em> power, in both the
+        material and social sense.
+      </p>
     </div>
   </div>
 
@@ -85,13 +116,12 @@
     </div>
   </div>
 
-  <div>
+  <div bind:this={expando.el} bind:clientHeight={expando.x}>
     <div>
       <p class='text-xl font-bold md:text-4xl'>
-        And yet nowadays, it seems that almost every piece of software is
-        hellbent on stretching the computational <span
-          class='text-pink'>recta</span> of our personal devices to their
-        absolute limits.
+        So why the fuck is almost every piece of software so hellbent on
+        stretching the computational <span class='text-pink'>recta</span> of
+        our personal devices to their absolute limits?
       </p>
     </div>
   </div>
