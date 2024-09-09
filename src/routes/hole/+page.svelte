@@ -13,8 +13,6 @@
     if (expando?.x === void 0)
       return
 
-    console.log((scrollY + (expando?.el?.getBoundingClientRect().y ?? 0)) / document.body.clientHeight)
-
     return scroll(timeline([
       ['.hole', {
         rotate: [5, 360],
