@@ -13,11 +13,13 @@
     if (expando?.x === void 0)
       return
 
+    const tr = (scrollY + (expando?.el?.getBoundingClientRect().y ?? 0)) / document.body.clientHeight
+
     return scroll(timeline([
       ['.hole', {
         rotate: [5, 360],
       }, {
-        duration: (scrollY + (expando?.el?.getBoundingClientRect().y ?? 0)) / document.body.clientHeight,
+        duration: tr,
         easing: 'ease-in',
       }],
 
@@ -28,7 +30,7 @@
         y: [0, '5%'],
       }, {
         at: 'a',
-        easing: 'linear',
+        easing: 'ease-out',
       }],
       ['.big-hole', {
         scale: [1, 4],
