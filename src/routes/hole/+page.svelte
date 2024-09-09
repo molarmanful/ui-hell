@@ -52,7 +52,7 @@
   <div>
     <div class='sticky top-1/2 translate-y--1/2'>
       <h2 class='b-none text-4xl md:text-7xl'>
-        Power is
+        <span class='text-warning'>Power</span> is
         <br />
         one helluva drug.
       </h2>
@@ -73,7 +73,7 @@
       <p class='text-xl font-bold md:text-4xl'>
         And yet nowadays, it seems that almost every piece of software is
         hellbent on stretching the computational <span
-          class='text-warning'>recta</span> of our personal devices to their
+          class='text-pink'>recta</span> of our personal devices to their
         absolute limits.
       </p>
     </div>
