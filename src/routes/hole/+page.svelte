@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { scroll, timeline } from 'motion'
+  import { animate, inView, scroll, timeline } from 'motion'
   import { watch } from 'runed'
 
   import { Title } from '$lib/components'
@@ -15,7 +15,7 @@
 
     const tr = (scrollY + (expando?.el?.getBoundingClientRect().y ?? 0)) / document.body.clientHeight
 
-    return scroll(timeline([
+    const scroff = scroll(timeline([
       ['.hole', {
         rotate: [5, 360],
       }, {
@@ -38,6 +38,28 @@
         at: 'a',
       }],
     ]))
+
+    const ivstop = inView(
+      '.foc',
+      () => {
+        animate('.big-hole', {
+          opacity: 0.1,
+        })
+
+        return () =>
+          animate('.big-hole', {
+            opacity: 1,
+          })
+      },
+      {
+        margin: '-50% 0% -50% 0%',
+      },
+    )
+
+    return () => {
+      scroff()
+      ivstop()
+    }
   })
 </script>
 
@@ -107,8 +129,8 @@
     </div>
   </div>
 
-  <div>
-    <div class='sticky top-1/2 translate-y--1/2'>
+  <div class='foc'>
+    <div class='sticky top-1/2 translate-y--1/2 self-start py-8'>
       <p class='md:text-3xl'>
         Our smartphones alone can process at speeds of over <strong>100,000
           times</strong> that of the Apollo 11's onboard computer...
@@ -116,13 +138,18 @@
     </div>
   </div>
 
-  <div bind:this={expando.el} bind:clientHeight={expando.x}>
-    <div>
+  <div>
+    <div bind:this={expando.el} class='sticky top-1/2 translate-y--1/2 self-start py-8' bind:clientHeight={expando.x}>
       <p class='text-xl font-bold md:text-4xl'>
         So why the fuck is almost every piece of software so hellbent on
         stretching the computational <span class='text-pink'>recta</span> of
         our personal devices to their absolute limits?
       </p>
+    </div>
+  </div>
+
+  <div>
+    <div>
     </div>
   </div>
 </div>
