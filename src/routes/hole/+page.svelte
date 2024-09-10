@@ -28,7 +28,7 @@
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: 'body',
-          start: 'top 0',
+          start: 'top top',
           end: 'bottom bottom',
           scrub: true,
         },
@@ -37,7 +37,7 @@
       tl.fromTo('.hole', { rotate: 5 }, { rotate: 360, duration: extop, ease: 'ease-in' })
 
       const t = clientHeight - innerHeight - extop
-      tl.fromTo('.hole', { rotate: 0 }, { rotate: 340, duration: t, ease: 'ease-out' }, '>')
+      tl.fromTo('.hole', { rotate: 0 }, { rotate: 340, duration: t, ease: 'ease-out', immediateRender: false }, '>')
       tl.to('.hole', { xPercent: 5, yPercent: 5, duration: t }, '<')
       tl.to('.big-hole', { scale: 4, duration: t }, '<')
 
@@ -136,7 +136,7 @@
     </div>
   </div>
 
-  <div bind:this={expando}>
+  <div bind:this={expando} class='h-200lvh'>
     <div style:top={mid('c')} class={sticky} bind:clientHeight={heights.c}>
       <p class='text-xl font-bold md:text-4xl'>
         So why the fuck is almost every piece of software so hellbent on
