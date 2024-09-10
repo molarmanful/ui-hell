@@ -28,7 +28,7 @@
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: 'body',
-          start: 'top top',
+          start: 'top 0',
           end: 'bottom bottom',
           scrub: true,
         },
@@ -36,15 +36,10 @@
 
       tl.fromTo('.hole', { rotate: 5 }, { rotate: 360, duration: extop, ease: 'ease-in' })
 
-      tl.add('exp')
-
-      tl.fromTo('.hole', { rotate: 0 }, { rotate: 340, duration: clientHeight - innerHeight - extop, ease: 'ease-out' }, 'exp')
-      tl.to('.hole', { xPercent: 5, yPercent: 5, duration: clientHeight - innerHeight - extop }, '<')
-      tl.to('.big-hole', { scale: 4, duration: clientHeight - innerHeight - extop }, '<')
-
-      tl.add('end')
-
-      console.log(tl.labels)
+      const t = clientHeight - innerHeight - extop
+      tl.fromTo('.hole', { rotate: 0 }, { rotate: 340, duration: t, ease: 'ease-out' }, '>')
+      tl.to('.hole', { xPercent: 5, yPercent: 5, duration: t }, '<')
+      tl.to('.big-hole', { scale: 4, duration: t }, '<')
 
       gsap.to('.big-hole', {
         opacity: 0.1,
