@@ -1,69 +1,72 @@
 <script lang='ts'>
-  import { animate, inView, scroll, timeline } from 'motion'
-  import { watch } from 'runed'
+  import gsap from 'gsap'
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
+  import { browser } from '$app/environment'
   import { Title } from '$lib/components'
 
-  const expando = $state<{
-    x?: number
-    el?: HTMLElement
-  }>({})
+  if (browser)
+    gsap.registerPlugin(ScrollTrigger)
 
-  watch(() => expando?.x, () => {
-    if (expando?.x === void 0)
+  const cont = 'text-background container [&>*]:(mx-auto max-w-prose flex mix-blend-difference min-h-lvh) dark:text-foreground'
+  const sticky = 'sticky self-start py-5'
+
+  let innerHeight = $state(0)
+  let clientHeight = $state(0)
+  const heights = $state<Record<string, number>>({})
+  const mid = (k: string) => `${(innerHeight - heights[k]) / 2}px`
+
+  let expando = $state<HTMLElement>()
+
+  $effect(() => {
+    if (heights.c === void 0)
       return
 
-    const tr = (scrollY + (expando?.el?.getBoundingClientRect().y ?? 0)) / document.body.clientHeight
+    const ctx = gsap.context(() => {
+      const extop = scrollY + (expando?.getBoundingClientRect().y ?? 0) - innerHeight / 2
 
-    const scroff = scroll(timeline([
-      ['.hole', {
-        rotate: [5, 360],
-      }, {
-        duration: tr,
-        easing: 'ease-in',
-      }],
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+      })
 
-      'a',
-      ['.hole', {
-        rotate: [0, 340],
-        x: [0, '5%'],
-        y: [0, '5%'],
-      }, {
-        at: 'a',
-        easing: 'ease-out',
-      }],
-      ['.big-hole', {
-        scale: [1, 4],
-      }, {
-        at: 'a',
-      }],
-    ]))
+      tl.fromTo('.hole', { rotate: 5 }, { rotate: 360, duration: extop, ease: 'ease-in' })
 
-    const ivstop = inView(
-      '.foc',
-      () => {
-        animate('.big-hole', {
-          opacity: 0.1,
-        })
+      tl.add('exp')
 
-        return () =>
-          animate('.big-hole', {
-            opacity: 1,
-          })
-      },
-      {
-        margin: '-50% 0% -50% 0%',
-      },
-    )
+      tl.fromTo('.hole', { rotate: 0 }, { rotate: 340, duration: clientHeight - innerHeight - extop, ease: 'ease-out' }, 'exp')
+      tl.to('.hole', { xPercent: 5, yPercent: 5, duration: clientHeight - innerHeight - extop }, '<')
+      tl.to('.big-hole', { scale: 4, duration: clientHeight - innerHeight - extop }, '<')
 
-    return () => {
-      scroff()
-      ivstop()
-    }
+      tl.add('end')
+
+      console.log(tl.labels)
+
+      gsap.to('.big-hole', {
+        opacity: 0.1,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: '.foc',
+          start: 'top 75%',
+          end: 'bottom 50%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
+    })
+
+    return () => ctx.revert()
   })
 </script>
 
+<svelte:window bind:innerHeight />
+
 <Title x='HOLE' />
+
+<svelte:body bind:clientHeight />
 
 {#snippet hole(max: number, n?: number)}
   {#if n === void 0}
@@ -81,7 +84,7 @@
   </div>
 </div>
 
-<div class='mt--13 flex text-right text-background mix-blend-difference h-svh container dark:text-foreground'>
+<div class='mt--13 flex text-right text-background mix-blend-difference h-lvh container dark:text-foreground'>
   <h1 class='m-auto text-30vw leading-none lg:text-70'>
     THE
     <br />
@@ -89,9 +92,9 @@
   </h1>
 </div>
 
-<div class='text-background container [&>*]:(mx-auto max-w-prose flex items-center mix-blend-difference min-h-svh) dark:text-foreground'>
+<div class={cont}>
   <div>
-    <div class='sticky top-1/2 translate-y--1/2'>
+    <div style:top={mid('a')} class={sticky} bind:clientHeight={heights.a}>
       <h2 class='b-none text-4xl md:text-7xl'>
         <span class='text-warning'>Power</span> is
         <br />
@@ -101,7 +104,7 @@
   </div>
 
   <div class='isolate text-foreground mix-blend-normal!'>
-    <div class='b rounded-lg bg-background/90 p-6 backdrop-blur'>
+    <div class='{sticky} top-22 b rounded-lg bg-background/90 p-6 py-5 backdrop-blur'>
       <p>
         It's easy to take many things for granted as a member of <strong>The
           Civilized World&trade;</strong>. Food, water, shelter, clothing,
@@ -130,7 +133,7 @@
   </div>
 
   <div class='foc'>
-    <div class='sticky top-1/2 translate-y--1/2 self-start py-8'>
+    <div style:top={mid('b')} class={sticky} bind:clientHeight={heights.b}>
       <p class='md:text-3xl'>
         Our smartphones alone can process at speeds of over <strong>100,000
           times</strong> that of the Apollo 11's onboard computer...
@@ -138,18 +141,13 @@
     </div>
   </div>
 
-  <div>
-    <div bind:this={expando.el} class='sticky top-1/2 translate-y--1/2 self-start py-8' bind:clientHeight={expando.x}>
+  <div bind:this={expando}>
+    <div style:top={mid('c')} class={sticky} bind:clientHeight={heights.c}>
       <p class='text-xl font-bold md:text-4xl'>
         So why the fuck is almost every piece of software so hellbent on
         stretching the computational <span class='text-pink'>recta</span> of
         our personal devices to their absolute limits?
       </p>
-    </div>
-  </div>
-
-  <div>
-    <div>
     </div>
   </div>
 </div>

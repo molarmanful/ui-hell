@@ -8,7 +8,7 @@
 <Title />
 
 <div class='relative items-start py-13 container lg:(flex [&>*]:w-1/2 divide-x)'>
-  <div class='pb-8 lg:(sticky top-22 pr-8 text-right) lt-lg:(min-h-69svh flex items-center justify-center text-center)'>
+  <div class='pb-8 lg:(sticky top-22 pr-8 text-right) lt-lg:(min-h-69lvh flex items-center justify-center text-center)'>
     <h1 class='text-25vw leading-[.8] 2xl:text-58.5 lg:text-37 sm:text-45 xl:text-48'>
       WHAT
       <br />
@@ -137,7 +137,7 @@
   </article>
 </div>
 
-<div class='align-center flex text-center h-svh container'>
+<div class='align-center flex text-center h-lvh container'>
   <div class='sticky top-27 m-auto'>
     <h1>
       CRAZY STUFF
