@@ -1,6 +1,7 @@
 <script lang='ts'>
   import Play from 'lucide-svelte/icons/play'
 
+  import { base } from '$app/paths'
   import { Title } from '$lib/components'
   import { Button } from '$lib/components/ui/button'
 </script>
@@ -152,7 +153,7 @@
       {#each [3, 2, 1] as n}
         <div class='flex justify-center gap-2'>
           {#each Array.from({ length: n }) as _}
-            <Button href='/meat' variant='outline'><Play class='size-4' /><span class='sr-only'>Play</span></Button>
+            <Button href='{base}/meat' variant='outline'><Play class='size-4' /><span class='sr-only'>Play</span></Button>
           {/each}
         </div>
       {/each}

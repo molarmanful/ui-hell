@@ -2,6 +2,7 @@
   import Beef from 'lucide-svelte/icons/beef'
 
   import { goto } from '$app/navigation'
+  import { base } from '$app/paths'
   import { ARSkel } from '$lib/components'
   import { Button, buttonVariants } from '$lib/components/ui/button'
   import * as Dialog from '$lib/components/ui/dialog'
@@ -71,7 +72,7 @@
             if (open && Date.now() - now >= 1000) {
               going = true
               cols = 1
-              goto('/sliders')
+              goto(`${base}/sliders`)
             }
           })
         }}
