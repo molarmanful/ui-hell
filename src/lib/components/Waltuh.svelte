@@ -52,7 +52,7 @@
             alt='Walter White falling over in dismay.'
             loading='lazy'
             onload={() => loaded = true}
-            src='/walter-white-falling.gif'
+            src='{base}/walter-white-falling.gif'
           />
         </ARSkel>
       {/each}

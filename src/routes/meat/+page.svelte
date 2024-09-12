@@ -1,6 +1,7 @@
 <script lang='ts'>
   import Megaphone from 'lucide-svelte/icons/megaphone'
 
+  import { base } from '$app/paths'
   import { ARSkel, Slop, Title, Waltuh } from '$lib/components'
   import * as Alert from '$lib/components/ui/alert'
   import * as Card from '$lib/components/ui/card'
@@ -19,7 +20,7 @@
         alt='Food worker handling pink slime in a factory setting.'
         loading='lazy'
         onload={() => loaded = true}
-        src='/meatgrinder.gif'
+        src='{base}/meatgrinder.gif'
       />
     </ARSkel>
   </div>
