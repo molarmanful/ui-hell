@@ -1,4 +1,10 @@
 <script lang='ts'>
+  import gsap from 'gsap'
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+
+  import { CheckGen, ProgressGen, RadioGen, SliderGen, SwitchGen, gens } from './gens.svelte'
+
+  import { browser } from '$app/environment'
   import { Title } from '$lib/components'
   import { Checkbox } from '$lib/components/ui/checkbox'
   import { Progress } from '$lib/components/ui/progress'
@@ -7,92 +13,12 @@
   import { Switch } from '$lib/components/ui/switch'
   import { getRand, rand } from '$lib/utils'
 
-  class Retick {
-    int = 0
-    cyc = 3
-    off = rand(this.cyc)
-
-    retick(f = () => {}) {
-      if (this.int === this.off)
-        f()
-      this.int++
-      this.int %= this.cyc
-    }
-  }
-
-  class BarGen {
-    max = 100
-    goal = 50
-    vel = 0
-    width = rand(5, 10)
-    x = $state(50)
-
-    tick() {
-      if ((this.vel >= 0 && this.x >= this.goal) || (this.vel <= 0 && this.x <= this.goal)) {
-        this.goal = rand(this.max)
-        this.vel = Math.sign(this.goal - this.x) * rand(1, 6)
-      }
-      this.x = Math.max(0, Math.min(this.max, this.x + this.vel))
-    }
-  }
-
-  class SliderGen extends BarGen {
-    el = $state<HTMLSpanElement>()
-  }
-
-  class ProgressGen extends BarGen {
-    el = $state<HTMLDivElement>()
-  }
-
-  class RadioGen {
-    n = rand(2, 6)
-    retick = new Retick()
-    x = $state(0)
-    el = $state<HTMLDivElement>()
-
-    tick() {
-      this.retick.retick(() => {
-        this.x = rand(this.n)
-      })
-    }
-  }
-
-  class CheckGen {
-    n = rand(1, 5)
-    retick = new Retick()
-    x = $state(Array.from<boolean>({ length: this.n }).fill(false))
-    el = $state<HTMLDivElement>()
-
-    tick() {
-      this.retick.retick(() => {
-        this.x[rand(this.x.length)] = !!rand(2)
-      })
-    }
-  }
-
-  class SwitchGen {
-    retick = new Retick()
-    x = $state(false)
-    el = $state<HTMLButtonElement>()
-
-    tick() {
-      this.retick.retick(() => {
-        this.x = !!rand(2)
-      })
-    }
-  }
-
-  const gens = [
-    () => new SliderGen(),
-    () => new ProgressGen(),
-    () => new RadioGen(),
-    () => new CheckGen(),
-    () => new SwitchGen(),
-  ] as const
+  if (browser)
+    gsap.registerPlugin(ScrollTrigger)
 
   const states = $state(
     Array.from({ length: 5 }).map(() => ({
-      is: new Set<number>(),
+      els: new Set<Element>(),
       xs:
         Array.from({ length: rand(50, 101) }).map(() =>
           getRand(gens)(),
@@ -102,34 +28,44 @@
 
   let loaded = $state(false)
 
-  $effect(() => {
-    const io = new IntersectionObserver((entries) => {
-      for (const { isIntersecting, target } of entries) {
-        const t = target as HTMLElement
-        const { i, j } = t.dataset
-        const i1 = +(i ?? -1)
-        const j1 = +(j ?? -1)
-        const { is } = states[i1]
+  const aos = (node: Element, i: number) => {
+    const ctx = gsap.context(() => {
+      const xs = node.querySelectorAll('[data-j]')
+      gsap.set(xs, { opacity: 0 })
 
-        t.style.opacity = `${+isIntersecting}`
+      const anim = (n: 0 | 1) => (batch: Element[]) => {
+        for (const el of batch)
+          states[i].els[n ? 'add' : 'delete'](el)
 
-        if (isIntersecting) {
-          is.add(j1)
-          continue
-        }
-        is.delete(j1)
+        gsap.to(batch, {
+          opacity: n,
+          duration: 0.2,
+          stagger: 0.01,
+          overwrite: true,
+        })
       }
+
+      ScrollTrigger.batch(xs, {
+        onEnter: anim(1),
+        onLeave: anim(0),
+        onEnterBack: anim(1),
+        onLeaveBack: anim(0),
+      })
     })
 
+    return { destroy: () => ctx.revert() }
+  }
+
+  $effect(() => {
     let die = false
     const f = () => {
       requestAnimationFrame(() => {
         if (die)
           return
 
-        for (const { is, xs } of states) {
-          for (const i of is) {
-            xs[i].tick()
+        for (const { els, xs } of states) {
+          for (const el of els) {
+            xs[+(el as HTMLElement).dataset.j!].tick()
           }
         }
 
@@ -137,23 +73,12 @@
       })
     }
 
-    for (const { xs } of states) {
-      for (const { el } of xs) {
-        if (!el)
-          continue
-        io.observe(el)
-      }
-    }
-
     setTimeout(() => {
       loaded = true
       f()
     })
 
-    return () => {
-      io.disconnect()
-      die = true
-    }
+    return () => die = true
   })
 </script>
 
@@ -164,13 +89,12 @@
     <h1>No problem! Here's the information about the Mercedes CLR GTR:</h1>
 
     {#each states as { xs }, i}
-      <div class='mt-13 flex flex-wrap gap-5'>
+      <div class='mt-13 flex flex-wrap gap-5' use:aos={i}>
         {#each xs as state, j}
           {#if state instanceof SliderGen}
             <div style:width='{state.width}ch' class='flex'>
               <Slider
-                class='my-auto transition-opacity-200'
-                data-i={i}
+                class='my-auto'
                 data-j={j}
                 max={state.max}
                 value={[state.x]}
@@ -181,8 +105,7 @@
           {:else if state instanceof ProgressGen}
             <div style:width='{state.width}ch' class='flex'>
               <Progress
-                class='my-auto transition-opacity-200'
-                data-i={i}
+                class='my-auto'
                 data-j={j}
                 value={state.x}
                 bind:el={state.el}
@@ -191,8 +114,7 @@
 
           {:else if state instanceof RadioGen}
             <RadioGroup.Root
-              class='flex flex-wrap transition-opacity-200'
-              data-i={i}
+              class='flex flex-wrap'
               data-j={j}
               value={`${state.x}`}
               bind:el={state.el}
@@ -205,8 +127,7 @@
           {:else if state instanceof CheckGen}
             <div
               bind:this={state.el}
-              class='flex flex-wrap gap-2 transition-opacity-200'
-              data-i={i}
+              class='flex flex-wrap gap-2'
               data-j={j}
             >
               {#each state.x as t}
@@ -216,9 +137,8 @@
 
           {:else if state instanceof SwitchGen}
             <Switch
-              class='flex flex-wrap gap-2 transition-opacity-200'
+              class='flex flex-wrap gap-2'
               checked={state.x}
-              data-i={i}
               data-j={j}
               bind:el={state.el}
             />
